@@ -1489,32 +1489,32 @@ body.dark-mode {
     --shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-body.dark-mode .wechat-style {
+body.dark-mode .preview {
     color: #e4e4e4;
     background: #2d2d2d;
 }
 
-body.dark-mode .wechat-style h1,
-body.dark-mode .wechat-style h2,
-body.dark-mode .wechat-style h3 {
+body.dark-mode .preview h1,
+body.dark-mode .preview h2,
+body.dark-mode .preview h3 {
     color: #f0f0f0;
 }
 
-body.dark-mode .wechat-style pre {
+body.dark-mode .preview pre {
     background: #1e1e1e;
     border-color: #404040;
 }
 
-body.dark-mode .wechat-style blockquote {
+body.dark-mode .preview blockquote {
     background: #383838;
     color: #b0b0b0;
 }
 
-body.dark-mode .wechat-style table td {
+body.dark-mode .preview table td {
     border-color: #404040;
 }
 
-body.dark-mode .wechat-style table tr:nth-child(even) {
+body.dark-mode .preview table tr:nth-child(even) {
     background: #383838;
 }
 
