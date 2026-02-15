@@ -1,2167 +1,1479 @@
-/* ========================================
-   全局样式
-   ======================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    /* Light Mode Colors */
-    --bg-color: #f5f7fa;
-    --container-bg: #ffffff;
-    --text-color: #2c3e50;
-    --border-color: #e1e8ed;
-    --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --primary-color: #07c160;
-    --secondary-color: #576b95;
-    --danger-color: #fa5151;
-    --code-bg: #f6f8fa;
-    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    
-    /* WeChat Brand Colors */
-    --wechat-green: #07c160;
-    --wechat-blue: #576b95;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s ease;
-}
 
 /* ========================================
-   容器布局
+   排版样式 (Typography Styles)
+   独立于颜色主题的排版设置
    ======================================== */
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ========================================
-   Header 样式
-   ======================================== */
-
-.header {
-    background: var(--header-bg);
-    color: white;
-    padding: 20px 30px;
-    box-shadow: var(--shadow);
-}
-
-.header h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.toolbar {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-    transform: translateY(0);
-}
-
-.btn-primary {
-    background-color: var(--wechat-green);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #06ad56;
-}
-
-.btn-secondary {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* ========================================
-   主内容区域
-   ======================================== */
-
-.main-content {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-}
-
-.editor-panel,
-.preview-panel {
-    background: var(--container-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.panel-header {
-    padding: 15px 20px;
-    border-bottom: 2px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #f8f9fa, #ffffff);
-}
-
-.panel-header h2 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.word-count {
-    font-size: 14px;
-    color: #8590a6;
-}
-
-.tip {
-    font-size: 12px;
-    color: var(--wechat-green);
-    background: rgba(7, 193, 96, 0.1);
-    padding: 4px 12px;
-    border-radius: 12px;
-}
-
-/* ========================================
-   编辑器样式
-   ======================================== */
-
-.editor {
-    flex: 1;
-    padding: 20px;
-    border: none;
-    outline: none;
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.8;
-    resize: none;
-    background: var(--container-bg);
-    color: var(--text-color);
-}
-
-.editor::placeholder {
-    color: #bfbfbf;
-}
-
-/* ========================================
-   预览区域样式
-   ======================================== */
-
-.preview {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background: white;
-}
-
-/* ========================================
-   微信公众号样式
-   ======================================== */
-
-.wechat-style {
+/* 标准排版 - 适中的字号和间距 */
+.typography-standard {
     font-size: 16px;
-    color: #3f3f3f;
     line-height: 1.8;
 }
 
-.wechat-style h1 {
+.typography-standard h1 {
     font-size: 24px;
     font-weight: bold;
-    color: #2c3e50;
     margin: 20px 0 15px;
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--wechat-green);
     position: relative;
 }
 
-.wechat-style h1::after {
+.typography-standard h1::after {
     content: '';
     position: absolute;
     bottom: -3px;
     left: 0;
     width: 60px;
     height: 3px;
-    background: #34495e;
 }
 
-.wechat-style h2 {
+.typography-standard h2 {
     font-size: 20px;
     font-weight: bold;
-    color: #2c3e50;
     margin: 18px 0 12px;
     padding-left: 12px;
-    border-left: 4px solid var(--wechat-green);
 }
 
-.wechat-style h3 {
+.typography-standard h3 {
     font-size: 18px;
     font-weight: bold;
-    color: #34495e;
     margin: 16px 0 10px;
 }
 
-.wechat-style h4,
-.wechat-style h5,
-.wechat-style h6 {
+.typography-standard h4,
+.typography-standard h5,
+.typography-standard h6 {
     font-size: 16px;
     font-weight: bold;
-    color: #34495e;
     margin: 14px 0 8px;
 }
 
-.wechat-style p {
+.typography-standard p {
     margin: 12px 0;
     text-align: justify;
     text-justify: inter-ideograph;
 }
 
-.wechat-style strong {
-    color: var(--wechat-green);
+.typography-standard strong {
     font-weight: bold;
 }
 
-.wechat-style em {
-    color: var(--wechat-blue);
+.typography-standard em {
     font-style: italic;
 }
 
-.wechat-style a {
-    color: #576b95;
+.typography-standard a {
     text-decoration: underline;
 }
 
-.wechat-style ul,
-.wechat-style ol {
+.typography-standard ul,
+.typography-standard ol {
     margin: 12px 0;
     padding-left: 28px;
 }
 
-.wechat-style li {
+.typography-standard li {
     margin: 6px 0;
     padding-left: 4px;
 }
 
-.wechat-style ul li::marker {
-    color: var(--wechat-green);
-}
-
-.wechat-style blockquote {
+.typography-standard blockquote {
     margin: 15px 0;
     padding: 12px 15px;
-    background: #f7f7f7;
-    border-left: 4px solid var(--wechat-green);
-    color: #666;
     font-style: italic;
 }
 
-.wechat-style code {
-    background: #fff5f5;
-    color: #ff502c;
+.typography-standard code {
     padding: 2px 6px;
     border-radius: 3px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 14px;
 }
 
-.wechat-style pre {
-    background: #f6f8fa;
+.typography-standard pre {
     padding: 15px;
     border-radius: 6px;
     overflow-x: auto;
     margin: 15px 0;
+}
+
+.typography-standard pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.typography-standard table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.typography-standard table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.typography-standard table td {
+    padding: 10px;
+}
+
+.typography-standard img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+}
+
+.typography-standard hr {
+    border: none;
+    margin: 20px 0;
+}
+
+/* 紧凑排版 - 较小的字号和间距，节省空间 */
+.typography-compact {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.typography-compact h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 16px 0 12px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.typography-compact h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+}
+
+.typography-compact h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 14px 0 10px;
+    padding-left: 10px;
+}
+
+.typography-compact h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 12px 0 8px;
+}
+
+.typography-compact h4,
+.typography-compact h5,
+.typography-compact h6 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0 6px;
+}
+
+.typography-compact p {
+    margin: 10px 0;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.typography-compact strong {
+    font-weight: bold;
+}
+
+.typography-compact em {
+    font-style: italic;
+}
+
+.typography-compact a {
+    text-decoration: underline;
+}
+
+.typography-compact ul,
+.typography-compact ol {
+    margin: 10px 0;
+    padding-left: 24px;
+}
+
+.typography-compact li {
+    margin: 4px 0;
+    padding-left: 4px;
+}
+
+.typography-compact blockquote {
+    margin: 12px 0;
+    padding: 10px 12px;
+    font-style: italic;
+}
+
+.typography-compact code {
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+}
+
+.typography-compact pre {
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.typography-compact pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.typography-compact table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.typography-compact table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.typography-compact table td {
+    padding: 10px;
+}
+
+.typography-compact img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+}
+
+.typography-compact hr {
+    border: none;
+    margin: 20px 0;
+}
+
+/* 优雅排版 - 较大的字号和宽松的间距 */
+.typography-elegant {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.typography-elegant h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 30px 0 20px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.typography-elegant h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+}
+
+.typography-elegant h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 24px 0 16px;
+    padding-left: 16px;
+}
+
+.typography-elegant h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 20px 0 14px;
+}
+
+.typography-elegant h4,
+.typography-elegant h5,
+.typography-elegant h6 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 16px 0 10px;
+}
+
+.typography-elegant p {
+    margin: 16px 0;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.typography-elegant strong {
+    font-weight: bold;
+}
+
+.typography-elegant em {
+    font-style: italic;
+}
+
+.typography-elegant a {
+    text-decoration: underline;
+}
+
+.typography-elegant ul,
+.typography-elegant ol {
+    margin: 16px 0;
+    padding-left: 32px;
+}
+
+.typography-elegant li {
+    margin: 8px 0;
+    padding-left: 4px;
+}
+
+.typography-elegant blockquote {
+    margin: 20px 0;
+    padding: 16px 20px;
+    font-style: italic;
+}
+
+.typography-elegant code {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 15px;
+}
+
+.typography-elegant pre {
+    padding: 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.typography-elegant pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.typography-elegant table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.typography-elegant table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.typography-elegant table td {
+    padding: 10px;
+}
+
+.typography-elegant img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+}
+
+.typography-elegant hr {
+    border: none;
+    margin: 20px 0;
+}
+
+/* 粗体排版 - 强调粗体和大间距 */
+.typography-bold {
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.typography-bold h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 24px 0 18px;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.typography-bold h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+}
+
+.typography-bold h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 20px 0 14px;
+    padding-left: 14px;
+}
+
+.typography-bold h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 18px 0 12px;
+}
+
+.typography-bold h4,
+.typography-bold h5,
+.typography-bold h6 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 16px 0 10px;
+}
+
+.typography-bold p {
+    margin: 14px 0;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.typography-bold strong {
+    font-weight: bold;
+}
+
+.typography-bold em {
+    font-style: italic;
+}
+
+.typography-bold a {
+    text-decoration: underline;
+}
+
+.typography-bold ul,
+.typography-bold ol {
+    margin: 14px 0;
+    padding-left: 30px;
+}
+
+.typography-bold li {
+    margin: 7px 0;
+    padding-left: 4px;
+}
+
+.typography-bold blockquote {
+    margin: 18px 0;
+    padding: 14px 18px;
+    font-style: italic;
+}
+
+.typography-bold code {
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.typography-bold pre {
+    padding: 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 18px 0;
+}
+
+.typography-bold pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.typography-bold table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.typography-bold table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.typography-bold table td {
+    padding: 10px;
+}
+
+.typography-bold img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+}
+
+.typography-bold hr {
+    border: none;
+    margin: 20px 0;
+}
+
+/* ========================================
+   颜色主题 (Color Themes)
+   独立于排版的颜色设置
+   ======================================== */
+
+/* WeChat Green */
+.theme-wechat {
+    color: #3f3f3f;
+}
+
+.theme-wechat h1 {
+    color: #2c3e50;
+    border-bottom: 3px solid #07c160;
+}
+
+.theme-wechat h1::after {
+    background: #34495e;
+}
+
+.theme-wechat h2 {
+    color: #2c3e50;
+    border-left: 4px solid #07c160;
+}
+
+.theme-wechat h3 {
+    color: #34495e;
+}
+
+.theme-wechat h4,
+.theme-wechat h5,
+.theme-wechat h6 {
+    color: #34495e;
+}
+
+.theme-wechat strong {
+    color: #07c160;
+}
+
+.theme-wechat em {
+    color: #576b95;
+}
+
+.theme-wechat a {
+    color: #576b95;
+}
+
+.theme-wechat ul li::marker {
+    color: #07c160;
+}
+
+.theme-wechat blockquote {
+    background: #f7f7f7;
+    border-left: 4px solid #07c160;
+    color: #666;
+}
+
+.theme-wechat code {
+    background: #fff5f5;
+    color: #ff502c;
+}
+
+.theme-wechat pre {
+    background: #f6f8fa;
     border: 1px solid #e1e4e8;
 }
 
-.wechat-style pre code {
-    background: transparent;
+.theme-wechat pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
-    line-height: 1.6;
 }
 
-.wechat-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.wechat-style table th {
-    background: var(--wechat-green);
+.theme-wechat table th {
+    background: #07c160;
     color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
 }
 
-.wechat-style table td {
-    padding: 10px;
+.theme-wechat table td {
     border: 1px solid #e1e8ed;
 }
 
-.wechat-style table tr:nth-child(even) {
+.theme-wechat table tr:nth-child(even) {
     background: #f8f9fa;
 }
 
-.wechat-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
+.theme-wechat img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.wechat-style hr {
-    border: none;
+.theme-wechat hr {
     border-top: 2px solid #e1e8ed;
-    margin: 20px 0;
 }
 
-/* ========================================
-   Zhihu Blue 主题样式
-   ======================================== */
-
-.zhihu-style {
-    font-size: 16px;
+/* Zhihu Blue */
+.theme-zhihu {
     color: #1a1a1a;
-    line-height: 1.9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
 }
 
-.zhihu-style h1 {
-    font-size: 26px;
-    font-weight: 600;
+.theme-zhihu h1 {
     color: #0084ff;
-    margin: 25px 0 18px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #0084ff;
-    letter-spacing: 0.5px;
+    border-bottom: 3px solid #0084ff;
 }
 
-.zhihu-style h2 {
-    font-size: 21px;
-    font-weight: 600;
-    color: #0066cc;
-    margin: 20px 0 14px;
-    padding-left: 14px;
-    border-left: 5px solid #0084ff;
-    line-height: 1.4;
+.theme-zhihu h1::after {
+    background: #0066cc;
 }
 
-.zhihu-style h3 {
-    font-size: 19px;
-    font-weight: 600;
-    color: #0066cc;
-    margin: 18px 0 12px;
-}
-
-.zhihu-style h4,
-.zhihu-style h5,
-.zhihu-style h6 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #444;
-    margin: 14px 0 8px;
-}
-
-.zhihu-style p {
-    margin: 14px 0;
-    text-align: justify;
-    letter-spacing: 0.2px;
-}
-
-.zhihu-style strong {
+.theme-zhihu h2 {
     color: #0084ff;
-    font-weight: 600;
+    border-left: 4px solid #0084ff;
 }
 
-.zhihu-style em {
+.theme-zhihu h3 {
     color: #0066cc;
-    font-style: italic;
 }
 
-.zhihu-style a {
+.theme-zhihu h4,
+.theme-zhihu h5,
+.theme-zhihu h6 {
+    color: #0066cc;
+}
+
+.theme-zhihu strong {
     color: #0084ff;
-    text-decoration: none;
-    border-bottom: 1px solid #0084ff;
-    padding-bottom: 1px;
 }
 
-.zhihu-style ul,
-.zhihu-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
+.theme-zhihu em {
+    color: #0066cc;
 }
 
-.zhihu-style li {
-    margin: 8px 0;
-    line-height: 1.8;
+.theme-zhihu a {
+    color: #0084ff;
 }
 
-.zhihu-style blockquote {
-    margin: 18px 0;
-    padding: 14px 18px;
+.theme-zhihu ul li::marker {
+    color: #0084ff;
+}
+
+.theme-zhihu blockquote {
     background: #f0f7ff;
     border-left: 4px solid #0084ff;
     color: #444;
-    font-style: normal;
-    line-height: 1.8;
 }
 
-.zhihu-style code {
+.theme-zhihu code {
     background: #e8f4ff;
     color: #0066cc;
-    padding: 3px 7px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-    font-weight: 500;
 }
 
-.zhihu-style pre {
+.theme-zhihu pre {
     background: #f6f8fa;
-    padding: 16px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 16px 0;
     border: 1px solid #d1e7ff;
-    line-height: 1.6;
 }
 
-.zhihu-style pre code {
-    background: transparent;
+.theme-zhihu pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.zhihu-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.zhihu-style table th {
+.theme-zhihu table th {
     background: #0084ff;
     color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
 }
 
-.zhihu-style table td {
-    padding: 10px;
+.theme-zhihu table td {
     border: 1px solid #d1e7ff;
 }
 
-.zhihu-style table tr:nth-child(even) {
+.theme-zhihu table tr:nth-child(even) {
     background: #f8fafe;
 }
 
-.zhihu-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
+.theme-zhihu img {
     box-shadow: 0 2px 8px rgba(0, 132, 255, 0.1);
 }
 
-.zhihu-style hr {
-    border: none;
+.theme-zhihu hr {
     border-top: 2px solid #d1e7ff;
-    margin: 20px 0;
 }
 
-/* ========================================
-   Juejin Purple 主题样式
-   ======================================== */
-
-.juejin-style {
-    font-size: 16px;
-    color: #2e2e2e;
-    line-height: 1.8;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+/* Juejin Purple */
+.theme-juejin {
+    color: #2d2d2d;
 }
 
-.juejin-style h1 {
-    font-size: 26px;
-    font-weight: 700;
+.theme-juejin h1 {
     color: #6366f1;
-    margin: 25px 0 18px;
-    padding: 12px 18px;
-    padding-left: 25px;
-    border-bottom: none;
-    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-    border-radius: 8px;
-    position: relative;
-    border-left: 5px solid #6366f1;
+    border-bottom: 3px solid #6366f1;
 }
 
-.juejin-style h1::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 60%;
-    background: linear-gradient(to bottom, #6366f1, #7c3aed);
-    border-radius: 2px;
+.theme-juejin h1::after {
+    background: #4f46e5;
 }
 
-.juejin-style h2 {
-    font-size: 21px;
-    font-weight: 600;
-    color: #7c3aed;
-    margin: 22px 0 14px;
-    padding: 10px 16px;
-    padding-left: 20px;
-    border-left: none;
-    background: linear-gradient(90deg, #f5f3ff, transparent);
-    border-radius: 6px;
-    position: relative;
-}
-
-.juejin-style h2::before {
-    content: '#';
-    position: absolute;
-    left: 8px;
+.theme-juejin h2 {
     color: #6366f1;
-    font-weight: 700;
+    border-left: 4px solid #6366f1;
 }
 
-.juejin-style h3 {
-    font-size: 19px;
-    font-weight: 600;
-    color: #7c3aed;
-    margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 3px solid #6366f1;
+.theme-juejin h3 {
+    color: #4f46e5;
 }
 
-.juejin-style h4,
-.juejin-style h5,
-.juejin-style h6 {
-    font-size: 17px;
-    font-weight: 600;
-    color: #555;
-    margin: 16px 0 10px;
+.theme-juejin h4,
+.theme-juejin h5,
+.theme-juejin h6 {
+    color: #4f46e5;
 }
 
-.juejin-style p {
-    margin: 14px 0;
-    text-align: justify;
-    letter-spacing: 0.3px;
-}
-
-.juejin-style strong {
+.theme-juejin strong {
     color: #6366f1;
-    font-weight: 700;
-    padding: 0 2px;
 }
 
-.juejin-style em {
-    color: #7c3aed;
-    font-style: italic;
+.theme-juejin em {
+    color: #8b5cf6;
 }
 
-.juejin-style a {
+.theme-juejin a {
     color: #6366f1;
-    text-decoration: none;
-    border-bottom: 2px solid #ddd6fe;
-    transition: border-color 0.3s ease;
 }
 
-.juejin-style ul,
-.juejin-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.juejin-style li {
-    margin: 8px 0;
-    padding-left: 5px;
-}
-
-.juejin-style ul li::marker {
+.theme-juejin ul li::marker {
     color: #6366f1;
-    content: '▸ ';
 }
 
-.juejin-style blockquote {
-    margin: 18px 0;
-    padding: 15px 20px;
-    padding-left: 25px;
-    background: linear-gradient(to right, #f5f3ff, #faf9fc);
+.theme-juejin blockquote {
+    background: #f5f3ff;
     border-left: 4px solid #6366f1;
     color: #555;
-    font-style: normal;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
 
-.juejin-style code {
-    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
-    color: #7c3aed;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 14px;
-    font-weight: 500;
+.theme-juejin code {
+    background: #ede9fe;
+    color: #6366f1;
 }
 
-.juejin-style pre {
-    background: #faf9fc;
-    padding: 18px;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 18px 0;
-    border: 2px solid #ddd6fe;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+.theme-juejin pre {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
 }
 
-.juejin-style pre code {
-    background: transparent;
+.theme-juejin pre code {
     color: inherit;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 400;
 }
 
-.juejin-style table {
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-    margin: 18px 0;
-    font-size: 14px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
-}
-
-.juejin-style table th {
-    background: linear-gradient(135deg, #6366f1, #7c3aed);
+.theme-juejin table th {
+    background: #6366f1;
     color: white;
-    padding: 12px 15px;
-    text-align: left;
-    font-weight: 600;
 }
 
-.juejin-style table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd6fe;
-    background: white;
+.theme-juejin table td {
+    border: 1px solid #e9d5ff;
 }
 
-.juejin-style table tr:nth-child(even) td {
-    background: #f8f7fc;
+.theme-juejin table tr:nth-child(even) {
+    background: #faf5ff;
 }
 
-.juejin-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
+.theme-juejin img {
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
 }
 
-.juejin-style hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #ddd6fe, transparent);
-    margin: 25px 0;
+.theme-juejin hr {
+    border-top: 2px solid #e9d5ff;
 }
 
-/* ========================================
-   Dark Night 主题样式
-   ======================================== */
-
-.dark-style {
-    font-size: 16px;
-    color: #e0e0e0;
-    line-height: 1.85;
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+/* Dark Night */
+.theme-dark {
+    color: #e5e5e5;
 }
 
-.dark-style h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #61dafb;
-    margin: 20px 0 15px;
-    padding: 12px 16px;
-    padding-bottom: 12px;
-    border-bottom: none;
-    background: linear-gradient(90deg, rgba(97, 218, 251, 0.15), transparent);
-    border-left: 4px solid #61dafb;
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.theme-dark h1 {
+    color: #00d4aa;
+    border-bottom: 3px solid #00d4aa;
 }
 
-.dark-style h2 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #61dafb;
-    margin: 18px 0 12px;
-    padding-left: 16px;
-    border-left: 3px solid #61dafb;
-    font-family: 'Courier New', monospace;
+.theme-dark h1::after {
+    background: #5eead4;
 }
 
-.dark-style h2::before {
-    content: '> ';
-    color: #ffd700;
-    margin-right: 5px;
+.theme-dark h2 {
+    color: #00d4aa;
+    border-left: 4px solid #00d4aa;
 }
 
-.dark-style h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #61dafb;
-    margin: 16px 0 10px;
-    font-family: 'Courier New', monospace;
+.theme-dark h3 {
+    color: #5eead4;
 }
 
-.dark-style h3::before {
-    content: '## ';
-    color: #888;
-    margin-right: 5px;
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+    color: #5eead4;
 }
 
-.dark-style h4,
-.dark-style h5,
-.dark-style h6 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #a0a0a0;
-    margin: 14px 0 8px;
+.theme-dark strong {
+    color: #00d4aa;
 }
 
-.dark-style p {
-    margin: 14px 0;
-    text-align: justify;
-    font-family: 'Consolas', monospace;
+.theme-dark em {
+    color: #5eead4;
 }
 
-.dark-style strong {
-    color: #ffd700;
-    font-weight: 700;
-    background: rgba(255, 215, 0, 0.1);
-    padding: 0 3px;
+.theme-dark a {
+    color: #5eead4;
 }
 
-.dark-style em {
-    color: #ff79c6;
-    font-style: italic;
+.theme-dark ul li::marker {
+    color: #00d4aa;
 }
 
-.dark-style a {
-    color: #61dafb;
-    text-decoration: none;
-    border-bottom: 2px dotted #61dafb;
-}
-
-.dark-style ul,
-.dark-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.dark-style li {
-    margin: 8px 0;
-}
-
-.dark-style ul li::marker {
-    color: #ffd700;
-    content: '▪ ';
-}
-
-.dark-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
+.theme-dark blockquote {
     background: #2a2a2a;
-    border-left: 4px solid #61dafb;
+    border-left: 4px solid #00d4aa;
     color: #b0b0b0;
-    font-style: italic;
 }
 
-.dark-style code {
+.theme-dark code {
     background: #2a2a2a;
-    color: #ff79c6;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
+    color: #00d4aa;
 }
 
-.dark-style pre {
-    background: #0d0d0d;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 15px 0;
+.theme-dark pre {
+    background: #1e1e1e;
     border: 1px solid #3a3a3a;
 }
 
-.dark-style pre code {
-    background: transparent;
+.theme-dark pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.dark-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
+.theme-dark table th {
+    background: #00d4aa;
+    color: #1a1a1a;
 }
 
-.dark-style table th {
-    background: #61dafb;
-    color: #1e1e1e;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.dark-style table td {
-    padding: 10px;
+.theme-dark table td {
     border: 1px solid #3a3a3a;
 }
 
-.dark-style table tr:nth-child(even) {
-    background: #2a2a2a;
+.theme-dark table tr:nth-child(even) {
+    background: #252525;
 }
 
-.dark-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(97, 218, 251, 0.2);
+.theme-dark img {
+    box-shadow: 0 2px 8px rgba(0, 212, 170, 0.15);
 }
 
-.dark-style hr {
-    border: none;
+.theme-dark hr {
     border-top: 2px solid #3a3a3a;
-    margin: 20px 0;
 }
 
-/* ========================================
-   Simple Gray 主题样式
-   ======================================== */
-
-.simple-style {
-    font-size: 15px;
-    color: #333;
-    line-height: 1.9;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    letter-spacing: 0.3px;
+/* Simple Gray */
+.theme-simple {
+    color: #333333;
 }
 
-.simple-style h1 {
-    font-size: 28px;
-    font-weight: 300;
-    color: #222;
-    margin: 30px 0 20px;
-    padding-bottom: 0;
-    border-bottom: none;
-    letter-spacing: 1px;
-    text-align: center;
+.theme-simple h1 {
+    color: #333333;
+    border-bottom: 3px solid #666666;
 }
 
-.simple-style h2 {
-    font-size: 22px;
-    font-weight: 400;
-    color: #333;
-    margin: 25px 0 15px;
-    padding-left: 0;
-    border-left: none;
-    letter-spacing: 0.5px;
+.theme-simple h1::after {
+    background: #888888;
 }
 
-.simple-style h3 {
-    font-size: 19px;
-    font-weight: 400;
-    color: #444;
-    margin: 20px 0 12px;
-    letter-spacing: 0.3px;
+.theme-simple h2 {
+    color: #333333;
+    border-left: 4px solid #666666;
 }
 
-.simple-style h4,
-.simple-style h5,
-.simple-style h6 {
-    font-size: 17px;
-    font-weight: 400;
-    color: #555;
-    margin: 18px 0 10px;
+.theme-simple h3 {
+    color: #555555;
 }
 
-.simple-style p {
-    margin: 16px 0;
-    text-align: justify;
-    text-indent: 2em;
+.theme-simple h4,
+.theme-simple h5,
+.theme-simple h6 {
+    color: #555555;
 }
 
-.simple-style strong {
-    color: #000;
-    font-weight: 600;
+.theme-simple strong {
+    color: #333333;
 }
 
-.simple-style em {
-    color: #555;
-    font-style: italic;
+.theme-simple em {
+    color: #666666;
 }
 
-.simple-style a {
-    color: #333;
-    text-decoration: none;
-    border-bottom: 1px solid #999;
+.theme-simple a {
+    color: #666666;
 }
 
-.simple-style ul,
-.simple-style ol {
-    margin: 18px 0;
-    padding-left: 40px;
+.theme-simple ul li::marker {
+    color: #666666;
 }
 
-.simple-style li {
-    margin: 10px 0;
-    line-height: 2;
-}
-
-.simple-style blockquote {
-    margin: 25px 0;
-    padding: 20px 30px;
-    background: transparent;
-    border-left: 2px solid #ccc;
-    color: #666;
-    font-style: italic;
-    text-indent: 0;
-}
-
-.simple-style code {
-    background: #f8f8f8;
-    color: #555;
-    padding: 3px 8px;
-    border-radius: 0;
-    font-family: 'Monaco', 'Courier New', monospace;
-    font-size: 14px;
-    border: 1px solid #eee;
-}
-
-.simple-style pre {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 0;
-    overflow-x: auto;
-    margin: 20px 0;
-    border: 1px solid #e5e5e5;
-}
-
-.simple-style pre code {
-    background: transparent;
-    color: inherit;
-    padding: 0;
-    font-size: 13px;
-}
-
-.simple-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.simple-style table th {
-    background: #888;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.simple-style table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-.simple-style table tr:nth-child(even) {
+.theme-simple blockquote {
     background: #f9f9f9;
+    border-left: 4px solid #666666;
+    color: #666666;
 }
 
-.simple-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.theme-simple code {
+    background: #f5f5f5;
+    color: #666666;
 }
 
-.simple-style hr {
-    border: none;
-    border-top: 2px solid #ddd;
-    margin: 20px 0;
+.theme-simple pre {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
 }
 
-/* ========================================
-   Elegant Pink 主题样式
-   ======================================== */
-
-.elegant-style {
-    font-size: 16px;
-    color: #4a4a4a;
-    line-height: 1.9;
-    font-family: 'Palatino', 'Georgia', serif;
+.theme-simple pre code {
+    color: inherit;
 }
 
-.elegant-style h1 {
-    font-size: 26px;
-    font-weight: 600;
+.theme-simple table th {
+    background: #666666;
+    color: white;
+}
+
+.theme-simple table td {
+    border: 1px solid #e0e0e0;
+}
+
+.theme-simple table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.theme-simple img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.theme-simple hr {
+    border-top: 2px solid #e0e0e0;
+}
+
+/* Elegant Pink */
+.theme-elegant {
+    color: #374151;
+}
+
+.theme-elegant h1 {
     color: #ec4899;
-    margin: 25px 0 20px;
-    padding: 15px 20px;
-    border-bottom: none;
-    background: linear-gradient(to right, #fef1f7, transparent);
-    border-left: 5px solid #ec4899;
-    text-shadow: 1px 1px 2px rgba(236, 72, 153, 0.1);
+    border-bottom: 3px solid #ec4899;
 }
 
-.elegant-style h2 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #db2777;
-    margin: 22px 0 16px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+.theme-elegant h1::after {
+    background: #db2777;
+}
+
+.theme-elegant h2 {
+    color: #ec4899;
     border-left: 4px solid #ec4899;
-    background: linear-gradient(90deg, #fef1f7 0%, transparent 100%);
-    position: relative;
 }
 
-.elegant-style h2::before {
-    content: '✦';
-    color: #ec4899;
-    margin-right: 10px;
-    font-size: 0.9em;
-}
-
-.elegant-style h3 {
-    font-size: 19px;
-    font-weight: 600;
+.theme-elegant h3 {
     color: #db2777;
-    margin: 18px 0 12px;
-    font-style: italic;
 }
 
-.elegant-style h4,
-.elegant-style h5,
-.elegant-style h6 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #666;
-    margin: 14px 0 8px;
-}
-
-.elegant-style p {
-    margin: 14px 0;
-    text-align: justify;
-    letter-spacing: 0.5px;
-}
-
-.elegant-style strong {
-    color: #ec4899;
-    font-weight: 600;
-    background: linear-gradient(180deg, transparent 60%, rgba(236, 72, 153, 0.15) 60%);
-}
-
-.elegant-style em {
+.theme-elegant h4,
+.theme-elegant h5,
+.theme-elegant h6 {
     color: #db2777;
-    font-style: italic;
 }
 
-.elegant-style a {
+.theme-elegant strong {
     color: #ec4899;
-    text-decoration: none;
-    border-bottom: 2px dotted #ec4899;
-    transition: all 0.3s ease;
 }
 
-.elegant-style ul,
-.elegant-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
+.theme-elegant em {
+    color: #f472b6;
 }
 
-.elegant-style li {
-    margin: 8px 0;
-}
-
-.elegant-style li::marker {
+.theme-elegant a {
     color: #ec4899;
-    font-weight: bold;
 }
 
-.elegant-style blockquote {
-    margin: 20px 0;
-    padding: 18px 25px;
+.theme-elegant ul li::marker {
+    color: #ec4899;
+}
+
+.theme-elegant blockquote {
     background: #fef1f7;
-    border-left: 5px double #ec4899;
-    color: #666;
-    font-style: italic;
-    position: relative;
+    border-left: 4px solid #ec4899;
+    color: #6b7280;
 }
 
-.elegant-style blockquote::before {
-    content: '"';
-    font-size: 48px;
-    color: #fce7f3;
-    position: absolute;
-    top: -5px;
-    left: 10px;
-    font-family: Georgia, serif;
+.theme-elegant code {
+    background: #fef1f7;
+    color: #ec4899;
 }
 
-.elegant-style code {
-    background: #fce7f3;
-    color: #db2777;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
+.theme-elegant pre {
+    background: #fdf2f8;
     border: 1px solid #fce7f3;
 }
 
-.elegant-style pre {
-    background: #fdf8fb;
-    padding: 18px;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 18px 0;
-    border: 2px solid #fce7f3;
-    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.08);
-}
-
-.elegant-style pre code {
-    background: transparent;
+.theme-elegant pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.elegant-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 18px 0;
-    font-size: 14px;
-    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.elegant-style table th {
-    background: linear-gradient(135deg, #ec4899, #db2777);
+.theme-elegant table th {
+    background: #ec4899;
     color: white;
-    padding: 12px 15px;
-    text-align: left;
-    font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
-.elegant-style table td {
-    padding: 12px 15px;
+.theme-elegant table td {
     border: 1px solid #fce7f3;
 }
 
-.elegant-style table tr:nth-child(even) {
-    background: #fef6f9;
+.theme-elegant table tr:nth-child(even) {
+    background: #fef2f2;
 }
 
-.elegant-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.15);
-    border: 3px solid #fef1f7;
+.theme-elegant img {
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.12);
 }
 
-.elegant-style hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #fce7f3, transparent);
-    margin: 30px 0;
+.theme-elegant hr {
+    border-top: 2px solid #fce7f3;
 }
 
-/* ========================================
-   Orange Vibrant 主题样式（新增）
-   ======================================== */
-
-.orange-style {
-    font-size: 16px;
-    color: #2d2d2d;
-    line-height: 1.75;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+/* Orange Vibrant */
+.theme-orange {
+    color: #333333;
 }
 
-.orange-style h1 {
-    font-size: 26px;
-    font-weight: 700;
-    color: #ff6b35;
-    margin: 22px 0 16px;
-    padding: 12px 0;
-    padding-left: 15px;
-    border-bottom: none;
-    border-left: 6px solid #ff6b35;
-    background: linear-gradient(to right, rgba(255, 107, 53, 0.1), transparent);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.theme-orange h1 {
+    color: #f97316;
+    border-bottom: 3px solid #f97316;
 }
 
-.orange-style h2 {
-    font-size: 21px;
-    font-weight: 700;
-    color: #ff8c42;
-    margin: 18px 0 12px;
-    padding: 8px 12px;
-    padding-left: 20px;
-    border-left: 5px solid #ff6b35;
-    background: rgba(255, 107, 53, 0.05);
-    position: relative;
+.theme-orange h1::after {
+    background: #ea580c;
 }
 
-.orange-style h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 5px;
-    height: 40%;
-    background: #ffa500;
+.theme-orange h2 {
+    color: #f97316;
+    border-left: 4px solid #f97316;
 }
 
-.orange-style h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ff8c42;
-    margin: 16px 0 10px;
-    border-bottom: 2px dotted #ffd4b8;
-    padding-bottom: 5px;
+.theme-orange h3 {
+    color: #ea580c;
 }
 
-.orange-style h4,
-.orange-style h5,
-.orange-style h6 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #555;
-    margin: 14px 0 8px;
+.theme-orange h4,
+.theme-orange h5,
+.theme-orange h6 {
+    color: #ea580c;
 }
 
-.orange-style p {
-    margin: 13px 0;
-    text-align: justify;
+.theme-orange strong {
+    color: #f97316;
 }
 
-.orange-style strong {
-    color: #ff6b35;
-    font-weight: 700;
-    text-shadow: 0 0 1px rgba(255, 107, 53, 0.3);
+.theme-orange em {
+    color: #fb923c;
 }
 
-.orange-style em {
-    color: #ff8c42;
-    font-style: italic;
+.theme-orange a {
+    color: #f97316;
 }
 
-.orange-style a {
-    color: #ff6b35;
-    text-decoration: none;
-    border-bottom: 2px solid #ffd4b8;
-    font-weight: 500;
+.theme-orange ul li::marker {
+    color: #f97316;
 }
 
-.orange-style ul,
-.orange-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
+.theme-orange blockquote {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    color: #666666;
 }
 
-.orange-style li {
-    margin: 7px 0;
+.theme-orange code {
+    background: #fff7ed;
+    color: #f97316;
 }
 
-.orange-style ul li::marker {
-    color: #ff6b35;
-    content: '● ';
+.theme-orange pre {
+    background: #fffbf5;
+    border: 1px solid #fed7aa;
 }
 
-.orange-style blockquote {
-    margin: 16px 0;
-    padding: 14px 18px;
-    background: linear-gradient(135deg, #fff5f0, #fffaf7);
-    border-left: 5px solid #ff6b35;
-    color: #555;
-    font-style: normal;
-    font-weight: 500;
-    border-radius: 0 6px 6px 0;
-}
-
-.orange-style code {
-    background: #ffebe0;
-    color: #e65100;
-    padding: 3px 7px;
-    border-radius: 4px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-    font-weight: 600;
-    border: 1px solid #ffd4b8;
-}
-
-.orange-style pre {
-    background: #fff8f5;
-    padding: 16px;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 16px 0;
-    border: 2px solid #ffd4b8;
-    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.1);
-}
-
-.orange-style pre code {
-    background: transparent;
+.theme-orange pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.orange-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.orange-style table th {
-    background: #ff6b35;
+.theme-orange table th {
+    background: #f97316;
     color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
 }
 
-.orange-style table td {
-    padding: 10px;
-    border: 1px solid #ffd4b8;
+.theme-orange table td {
+    border: 1px solid #fed7aa;
 }
 
-.orange-style table tr:nth-child(even) {
-    background: #fffaf7;
+.theme-orange table tr:nth-child(even) {
+    background: #fffbf5;
 }
 
-.orange-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
+.theme-orange img {
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.12);
 }
 
-.orange-style hr {
-    border: none;
-    border-top: 2px solid #ffd4b8;
-    margin: 20px 0;
+.theme-orange hr {
+    border-top: 2px solid #fed7aa;
 }
 
-/* ========================================
-   Teal Ocean 主题样式（新增）
-   ======================================== */
-
-.teal-style {
-    font-size: 16px;
-    color: #2c3e50;
-    line-height: 1.85;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica', sans-serif;
+/* Teal Ocean */
+.theme-teal {
+    color: #1f2937;
 }
 
-.teal-style h1 {
-    font-size: 25px;
-    font-weight: 500;
+.theme-teal h1 {
     color: #14b8a6;
-    margin: 24px 0 16px;
-    padding: 14px 20px;
-    padding-bottom: 14px;
-    border-bottom: none;
-    background: linear-gradient(to right, #f0fdfa, #ccfbf1, #f0fdfa);
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(20, 184, 166, 0.1);
+    border-bottom: 3px solid #14b8a6;
 }
 
-.teal-style h2 {
-    font-size: 20px;
-    font-weight: 600;
+.theme-teal h1::after {
+    background: #0d9488;
+}
+
+.theme-teal h2 {
+    color: #14b8a6;
+    border-left: 4px solid #14b8a6;
+}
+
+.theme-teal h3 {
     color: #0d9488;
-    margin: 20px 0 14px;
-    padding: 10px 16px;
-    padding-left: 20px;
-    border-left: none;
-    background: linear-gradient(90deg, #f0fdfa, transparent);
-    border-radius: 0 20px 20px 0;
-    position: relative;
 }
 
-.teal-style h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 70%;
-    background: linear-gradient(to bottom, #14b8a6, #0d9488);
-    border-radius: 3px;
-}
-
-.teal-style h3 {
-    font-size: 18px;
-    font-weight: 600;
+.theme-teal h4,
+.theme-teal h5,
+.theme-teal h6 {
     color: #0d9488;
-    margin: 18px 0 12px;
 }
 
-.teal-style h4,
-.teal-style h5,
-.teal-style h6 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #475569;
-    margin: 16px 0 10px;
-}
-
-.teal-style p {
-    margin: 14px 0;
-    text-align: justify;
-    line-height: 1.9;
-}
-
-.teal-style strong {
+.theme-teal strong {
     color: #14b8a6;
-    font-weight: 600;
 }
 
-.teal-style em {
-    color: #0d9488;
-    font-style: italic;
+.theme-teal em {
+    color: #5eead4;
 }
 
-.teal-style a {
+.theme-teal a {
     color: #14b8a6;
-    text-decoration: none;
-    border-bottom: 2px solid #99f6e4;
-    padding-bottom: 1px;
 }
 
-.teal-style ul,
-.teal-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.teal-style li {
-    margin: 8px 0;
-}
-
-.teal-style ul li::marker {
+.theme-teal ul li::marker {
     color: #14b8a6;
-    content: '◆ ';
 }
 
-.teal-style blockquote {
-    margin: 18px 0;
-    padding: 16px 20px;
-    background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
-    border-left: none;
-    border-radius: 10px;
-    color: #475569;
-    font-style: normal;
-    box-shadow: inset 4px 0 0 #14b8a6;
-}
-
-.teal-style code {
-    background: #ccfbf1;
-    color: #0f766e;
-    padding: 3px 7px;
-    border-radius: 5px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-}
-
-.teal-style pre {
+.theme-teal blockquote {
     background: #f0fdfa;
-    padding: 16px;
-    border-radius: 10px;
-    overflow-x: auto;
-    margin: 16px 0;
-    border: 2px solid #99f6e4;
+    border-left: 4px solid #14b8a6;
+    color: #4b5563;
 }
 
-.teal-style pre code {
-    background: transparent;
-    color: inherit;
-    padding: 0;
-    font-size: 13px;
+.theme-teal code {
+    background: #f0fdfa;
+    color: #14b8a6;
 }
 
-.teal-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.teal-style table th {
-    background: #14b8a6;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.teal-style table td {
-    padding: 10px;
+.theme-teal pre {
+    background: #f0fdfa;
     border: 1px solid #99f6e4;
 }
 
-.teal-style table tr:nth-child(even) {
-    background: #f0fdfa;
-}
-
-.teal-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(20, 184, 166, 0.15);
-}
-
-.teal-style hr {
-    border: none;
-    border-top: 2px solid #99f6e4;
-    margin: 20px 0;
-}
-
-/* ========================================
-   Red Bold 主题样式（新增）
-   ======================================== */
-
-.red-style {
-    font-size: 16px;
-    color: #1f2937;
-    line-height: 1.75;
-    font-family: 'Arial', 'Helvetica', sans-serif;
-}
-
-.red-style h1 {
-    font-size: 26px;
-    font-weight: 800;
-    color: #dc2626;
-    margin: 22px 0 16px;
-    padding: 10px 0;
-    padding-bottom: 12px;
-    border-bottom: 4px double #dc2626;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-}
-
-.red-style h2 {
-    font-size: 21px;
-    font-weight: 700;
-    color: #b91c1c;
-    margin: 18px 0 12px;
-    padding: 8px 0;
-    padding-left: 15px;
-    border-left: 6px solid #dc2626;
-    background: linear-gradient(90deg, rgba(220, 38, 38, 0.08), transparent);
-}
-
-.red-style h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #b91c1c;
-    margin: 16px 0 10px;
-    text-decoration: underline;
-    text-decoration-color: #fecaca;
-    text-underline-offset: 4px;
-}
-
-.red-style h4,
-.red-style h5,
-.red-style h6 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #4b5563;
-    margin: 14px 0 8px;
-}
-
-.red-style p {
-    margin: 13px 0;
-    text-align: justify;
-}
-
-.red-style strong {
-    color: #dc2626;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-}
-
-.red-style em {
-    color: #b91c1c;
-    font-style: italic;
-}
-
-.red-style a {
-    color: #dc2626;
-    text-decoration: none;
-    border-bottom: 2px solid #dc2626;
-    font-weight: 600;
-}
-
-.red-style ul,
-.red-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.red-style li {
-    margin: 7px 0;
-}
-
-.red-style ul li::marker {
-    color: #dc2626;
-    content: '■ ';
-}
-
-.red-style blockquote {
-    margin: 16px 0;
-    padding: 14px 18px;
-    padding-left: 22px;
-    background: linear-gradient(to right, #fef2f2, #ffffff);
-    border-left: 5px solid #dc2626;
-    color: #4b5563;
-    font-style: normal;
-    font-weight: 500;
-    box-shadow: 2px 2px 4px rgba(220, 38, 38, 0.1);
-}
-
-.red-style code {
-    background: #fee2e2;
-    color: #991b1b;
-    padding: 3px 7px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-    font-weight: 600;
-    border: 1px solid #fecaca;
-}
-
-.red-style pre {
-    background: #fef2f2;
-    padding: 16px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 16px 0;
-    border: 2px solid #fecaca;
-    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.1);
-}
-
-.red-style pre code {
-    background: transparent;
+.theme-teal pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.red-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.red-style table th {
-    background: #dc2626;
+.theme-teal table th {
+    background: #14b8a6;
     color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
 }
 
-.red-style table td {
-    padding: 10px;
+.theme-teal table td {
+    border: 1px solid #99f6e4;
+}
+
+.theme-teal table tr:nth-child(even) {
+    background: #ccfbf1;
+}
+
+.theme-teal img {
+    box-shadow: 0 2px 8px rgba(20, 184, 166, 0.12);
+}
+
+.theme-teal hr {
+    border-top: 2px solid #99f6e4;
+}
+
+/* Red Bold */
+.theme-red {
+    color: #1f2937;
+}
+
+.theme-red h1 {
+    color: #ef4444;
+    border-bottom: 3px solid #ef4444;
+}
+
+.theme-red h1::after {
+    background: #dc2626;
+}
+
+.theme-red h2 {
+    color: #ef4444;
+    border-left: 4px solid #ef4444;
+}
+
+.theme-red h3 {
+    color: #dc2626;
+}
+
+.theme-red h4,
+.theme-red h5,
+.theme-red h6 {
+    color: #dc2626;
+}
+
+.theme-red strong {
+    color: #ef4444;
+}
+
+.theme-red em {
+    color: #f87171;
+}
+
+.theme-red a {
+    color: #ef4444;
+}
+
+.theme-red ul li::marker {
+    color: #ef4444;
+}
+
+.theme-red blockquote {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #4b5563;
+}
+
+.theme-red code {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.theme-red pre {
+    background: #fef8f8;
     border: 1px solid #fecaca;
 }
 
-.red-style table tr:nth-child(even) {
+.theme-red pre code {
+    color: inherit;
+}
+
+.theme-red table th {
+    background: #ef4444;
+    color: white;
+}
+
+.theme-red table td {
+    border: 1px solid #fecaca;
+}
+
+.theme-red table tr:nth-child(even) {
     background: #fef8f8;
 }
 
-.red-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+.theme-red img {
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.12);
 }
 
-.red-style hr {
-    border: none;
+.theme-red hr {
     border-top: 2px solid #fecaca;
-    margin: 20px 0;
 }
 
-/* ========================================
-   Amber Warm 主题样式（新增）
-   ======================================== */
-
-.amber-style {
-    font-size: 16px;
+/* Amber Warm */
+.theme-amber {
     color: #292524;
-    line-height: 1.8;
-    font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
 }
 
-.amber-style h1 {
-    font-size: 25px;
-    font-weight: 600;
+.theme-amber h1 {
     color: #f59e0b;
-    margin: 22px 0 16px;
-    padding: 10px 18px;
-    padding-bottom: 10px;
-    border-bottom: none;
-    background: linear-gradient(135deg, #fffbeb, #fef3c7);
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+    border-bottom: 3px solid #f59e0b;
 }
 
-.amber-style h2 {
-    font-size: 20px;
-    font-weight: 600;
+.theme-amber h1::after {
+    background: #d97706;
+}
+
+.theme-amber h2 {
+    color: #f59e0b;
+    border-left: 4px solid #f59e0b;
+}
+
+.theme-amber h3 {
     color: #d97706;
-    margin: 18px 0 12px;
-    padding: 8px 14px;
-    padding-left: 18px;
-    border-left: none;
-    background: linear-gradient(to right, #fffbeb, transparent);
-    border-radius: 4px;
-    position: relative;
 }
 
-.amber-style h2::before {
-    content: '☀';
-    position: absolute;
-    left: 0;
-    color: #f59e0b;
-    font-size: 1.1em;
-}
-
-.amber-style h3 {
-    font-size: 18px;
-    font-weight: 600;
+.theme-amber h4,
+.theme-amber h5,
+.theme-amber h6 {
     color: #d97706;
-    margin: 16px 0 10px;
 }
 
-.amber-style h4,
-.amber-style h5,
-.amber-style h6 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #57534e;
-    margin: 14px 0 8px;
-}
-
-.amber-style p {
-    margin: 13px 0;
-    text-align: justify;
-}
-
-.amber-style strong {
+.theme-amber strong {
     color: #f59e0b;
-    font-weight: 700;
 }
 
-.amber-style em {
-    color: #d97706;
-    font-style: italic;
+.theme-amber em {
+    color: #fbbf24;
 }
 
-.amber-style a {
+.theme-amber a {
     color: #f59e0b;
-    text-decoration: none;
-    border-bottom: 2px wavy #fde68a;
 }
 
-.amber-style ul,
-.amber-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.amber-style li {
-    margin: 7px 0;
-}
-
-.amber-style ul li::marker {
+.theme-amber ul li::marker {
     color: #f59e0b;
-    content: '◉ ';
 }
 
-.amber-style blockquote {
-    margin: 16px 0;
-    padding: 14px 18px;
-    background: linear-gradient(to bottom, #fffbeb, #fef3c7);
+.theme-amber blockquote {
+    background: #fffbeb;
     border-left: 4px solid #f59e0b;
     color: #57534e;
-    font-style: normal;
-    border-radius: 0 6px 6px 0;
 }
 
-.amber-style code {
-    background: #fef3c7;
-    color: #b45309;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-}
-
-.amber-style pre {
+.theme-amber code {
     background: #fffbeb;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 15px 0;
+    color: #f59e0b;
+}
+
+.theme-amber pre {
+    background: #fffbeb;
     border: 1px solid #fde68a;
 }
 
-.amber-style pre code {
-    background: transparent;
+.theme-amber pre code {
     color: inherit;
-    padding: 0;
-    font-size: 13px;
 }
 
-.amber-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.amber-style table th {
+.theme-amber table th {
     background: #f59e0b;
     color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
 }
 
-.amber-style table td {
-    padding: 10px;
+.theme-amber table td {
     border: 1px solid #fde68a;
 }
 
-.amber-style table tr:nth-child(even) {
-    background: #fefcf3;
+.theme-amber table tr:nth-child(even) {
+    background: #fef3c7;
 }
 
-.amber-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+.theme-amber img {
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.12);
 }
 
-.amber-style hr {
-    border: none;
+.theme-amber hr {
     border-top: 2px solid #fde68a;
-    margin: 20px 0;
 }
 
-/* ========================================
-   Mint Fresh 主题样式（新增）
-   ======================================== */
-
-.mint-style {
-    font-size: 16px;
-    color: #1e293b;
-    line-height: 1.85;
-    font-family: 'Verdana', 'Geneva', sans-serif;
+/* Mint Fresh */
+.theme-mint {
+    color: #1f2937;
 }
 
-.mint-style h1 {
-    font-size: 25px;
-    font-weight: 500;
+.theme-mint h1 {
     color: #10b981;
-    margin: 22px 0 16px;
-    padding: 12px 20px;
-    padding-bottom: 12px;
-    border-bottom: none;
-    background: radial-gradient(circle at left, #f0fdf4, transparent);
-    border-left: 8px solid #10b981;
-    border-radius: 0 15px 15px 0;
+    border-bottom: 3px solid #10b981;
 }
 
-.mint-style h2 {
-    font-size: 20px;
-    font-weight: 600;
+.theme-mint h1::after {
+    background: #059669;
+}
+
+.theme-mint h2 {
+    color: #10b981;
+    border-left: 4px solid #10b981;
+}
+
+.theme-mint h3 {
     color: #059669;
-    margin: 18px 0 12px;
-    padding: 8px 14px;
-    padding-left: 18px;
-    border-left: none;
-    border-radius: 8px;
-    background: linear-gradient(to right, #d1fae5, #f0fdf4, transparent);
-    position: relative;
 }
 
-.mint-style h2::before {
-    content: '🌿';
-    position: absolute;
-    left: 0;
-    font-size: 0.9em;
-}
-
-.mint-style h3 {
-    font-size: 18px;
-    font-weight: 600;
+.theme-mint h4,
+.theme-mint h5,
+.theme-mint h6 {
     color: #059669;
-    margin: 16px 0 10px;
 }
 
-.mint-style h4,
-.mint-style h5,
-.mint-style h6 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #475569;
-    margin: 14px 0 8px;
-}
-
-.mint-style p {
-    margin: 14px 0;
-    text-align: justify;
-}
-
-.mint-style strong {
+.theme-mint strong {
     color: #10b981;
-    font-weight: 700;
 }
 
-.mint-style em {
-    color: #059669;
-    font-style: italic;
+.theme-mint em {
+    color: #34d399;
 }
 
-.mint-style a {
+.theme-mint a {
     color: #10b981;
-    text-decoration: none;
-    border-bottom: 2px solid #a7f3d0;
 }
 
-.mint-style ul,
-.mint-style ol {
-    margin: 14px 0;
-    padding-left: 30px;
-}
-
-.mint-style li {
-    margin: 8px 0;
-}
-
-.mint-style ul li::marker {
+.theme-mint ul li::marker {
     color: #10b981;
-    content: '✓ ';
 }
 
-.mint-style blockquote {
-    margin: 18px 0;
-    padding: 16px 20px;
-    background: radial-gradient(circle at top left, #f0fdf4, #ffffff);
-    border-left: 5px solid #10b981;
-    border-radius: 8px;
-    color: #475569;
-    font-style: normal;
-    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.08);
-}
-
-.mint-style code {
-    background: #d1fae5;
-    color: #047857;
-    padding: 3px 7px;
-    border-radius: 5px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-}
-
-.mint-style pre {
+.theme-mint blockquote {
     background: #f0fdf4;
-    padding: 16px;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 16px 0;
-    border: 2px solid #a7f3d0;
+    border-left: 4px solid #10b981;
+    color: #4b5563;
 }
 
-.mint-style pre code {
-    background: transparent;
-    color: inherit;
-    padding: 0;
-    font-size: 13px;
+.theme-mint code {
+    background: #f0fdf4;
+    color: #10b981;
 }
 
-.mint-style table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.mint-style table th {
-    background: #10b981;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.mint-style table td {
-    padding: 10px;
+.theme-mint pre {
+    background: #f0fdf4;
     border: 1px solid #a7f3d0;
 }
 
-.mint-style table tr:nth-child(even) {
-    background: #f7fef9;
+.theme-mint pre code {
+    color: inherit;
 }
 
-.mint-style img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
-}
-
-.mint-style hr {
-    border: none;
-    border-top: 2px solid #a7f3d0;
-    margin: 20px 0;
-}
-
-/* ========================================
-   Footer 样式
-   ======================================== */
-
-.footer {
-    background: var(--container-bg);
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    font-size: 14px;
-    color: #8590a6;
-}
-
-.footer p {
-    margin: 5px 0;
-}
-
-.footer a {
-    color: var(--wechat-green);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* ========================================
-   Toast 通知
-   ======================================== */
-
-.toast {
-    position: fixed;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
+.theme-mint table th {
+    background: #10b981;
     color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: top 0.3s ease;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.toast.show {
-    top: 20px;
+.theme-mint table td {
+    border: 1px solid #a7f3d0;
+}
+
+.theme-mint table tr:nth-child(even) {
+    background: #d1fae5;
+}
+
+.theme-mint img {
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.12);
+}
+
+.theme-mint hr {
+    border-top: 2px solid #a7f3d0;
 }
 
 /* ========================================
@@ -2177,32 +1489,32 @@ body.dark-mode {
     --shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-body.dark-mode .wechat-style {
+body.dark-mode .preview {
     color: #e4e4e4;
     background: #2d2d2d;
 }
 
-body.dark-mode .wechat-style h1,
-body.dark-mode .wechat-style h2,
-body.dark-mode .wechat-style h3 {
+body.dark-mode .preview h1,
+body.dark-mode .preview h2,
+body.dark-mode .preview h3 {
     color: #f0f0f0;
 }
 
-body.dark-mode .wechat-style pre {
+body.dark-mode .preview pre {
     background: #1e1e1e;
     border-color: #404040;
 }
 
-body.dark-mode .wechat-style blockquote {
+body.dark-mode .preview blockquote {
     background: #383838;
     color: #b0b0b0;
 }
 
-body.dark-mode .wechat-style table td {
+body.dark-mode .preview table td {
     border-color: #404040;
 }
 
-body.dark-mode .wechat-style table tr:nth-child(even) {
+body.dark-mode .preview table tr:nth-child(even) {
     background: #383838;
 }
 

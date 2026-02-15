@@ -16,6 +16,12 @@
                 <button id="copyBtn" class="btn btn-primary">📋 复制富文本</button>
                 <button id="clearBtn" class="btn btn-secondary">🗑️ 清空内容</button>
                 <button id="downloadBtn" class="btn btn-secondary">💾 下载 MD</button>
+                <select id="typographySelector" class="btn btn-secondary">
+                    <option value="standard">标准排版</option>
+                    <option value="compact">紧凑排版</option>
+                    <option value="elegant">优雅排版</option>
+                    <option value="bold">粗体排版</option>
+                </select>
                 <select id="themeSelector" class="btn btn-secondary">
                     <option value="wechat">WeChat Green</option>
                     <option value="zhihu">Zhihu Blue</option>
@@ -70,7 +76,7 @@ console.log('Hello, World!');
                     <h2>👀 实时预览</h2>
                     <span class="tip">💡 点击复制后粘贴到微信</span>
                 </div>
-                <div id="preview" class="preview wechat-style"></div>
+                <div id="preview" class="preview typography-standard theme-wechat"></div>
             </div>
         </main>
 

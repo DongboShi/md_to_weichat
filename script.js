@@ -9,6 +9,7 @@ const clearBtn = document.getElementById('clearBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const themeToggle = document.getElementById('themeToggle');
 const themeSelector = document.getElementById('themeSelector');
+const typographySelector = document.getElementById('typographySelector');
 const wordCount = document.getElementById('wordCount');
 const toast = document.getElementById('toast');
 
@@ -163,26 +164,45 @@ function loadTheme() {
         themeToggle.textContent = '☀️ 浅色模式';
     }
     
-    // Load content theme
+    // Load content theme (color)
     const contentTheme = localStorage.getItem('contentTheme') || 'wechat';
     themeSelector.value = contentTheme;
-    applyContentTheme(contentTheme);
+    
+    // Load typography style
+    const typography = localStorage.getItem('typography') || 'standard';
+    typographySelector.value = typography;
+    
+    // Apply both
+    applyStyles(typography, contentTheme);
 }
 
-// Content theme switching
+// Content theme switching (color)
 themeSelector.addEventListener('change', (e) => {
     const selectedTheme = e.target.value;
-    applyContentTheme(selectedTheme);
+    const typography = typographySelector.value;
+    applyStyles(typography, selectedTheme);
     localStorage.setItem('contentTheme', selectedTheme);
-    showToast(`🎨 已切换到 ${e.target.selectedOptions[0].text} 主题`);
+    showToast(`🎨 已切换到 ${e.target.selectedOptions[0].text} 颜色主题`);
 });
 
-function applyContentTheme(theme) {
-    // Remove all theme classes
+// Typography switching
+typographySelector.addEventListener('change', (e) => {
+    const selectedTypography = e.target.value;
+    const colorTheme = themeSelector.value;
+    applyStyles(selectedTypography, colorTheme);
+    localStorage.setItem('typography', selectedTypography);
+    showToast(`📐 已切换到 ${e.target.selectedOptions[0].text}`);
+});
+
+function applyStyles(typography, colorTheme) {
+    // Remove all existing classes except 'preview'
     preview.className = 'preview';
     
-    // Apply selected theme class
-    preview.classList.add(`${theme}-style`);
+    // Apply typography class
+    preview.classList.add(`typography-${typography}`);
+    
+    // Apply color theme class
+    preview.classList.add(`theme-${colorTheme}`);
 }
 
 // ========================================
