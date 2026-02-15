@@ -1,8 +1,92 @@
-<select id="themeSelector">
-  <option value="wechat">WeChat Green</option>
-  <option value="zhihu">Zhihu Blue</option>
-  <option value="juejin">Juejin Purple</option>
-  <option value="dark">Dark Night</option>
-  <option value="simple">Simple Gray</option>
-  <option value="elegant">Elegant Pink</option>
-</select>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Markdown 微信公众号编辑器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📝 Markdown 微信公众号编辑器</h1>
+            <div class="toolbar">
+                <button id="copyBtn" class="btn btn-primary">📋 复制富文本</button>
+                <button id="clearBtn" class="btn btn-secondary">🗑️ 清空内容</button>
+                <button id="downloadBtn" class="btn btn-secondary">💾 下载 MD</button>
+                <select id="themeSelector" class="btn btn-secondary">
+                    <option value="wechat">WeChat Green</option>
+                    <option value="zhihu">Zhihu Blue</option>
+                    <option value="juejin">Juejin Purple</option>
+                    <option value="dark">Dark Night</option>
+                    <option value="simple">Simple Gray</option>
+                    <option value="elegant">Elegant Pink</option>
+                    <option value="orange">Orange Vibrant</option>
+                    <option value="teal">Teal Ocean</option>
+                    <option value="red">Red Bold</option>
+                    <option value="amber">Amber Warm</option>
+                    <option value="mint">Mint Fresh</option>
+                </select>
+                <button id="themeToggle" class="btn btn-secondary">🌙 深色模式</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Editor Panel -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>✍️ Markdown 编辑</h2>
+                    <span class="word-count" id="wordCount">0 字</span>
+                </div>
+                <textarea 
+                    id="editor" 
+                    class="editor" 
+                    placeholder="在这里输入 Markdown 内容...
+
+示例：
+# 一级标题
+## 二级标题
+
+这是一段**粗体**文字和*斜体*文字。
+
+- 列表项 1
+- 列表项 2
+
+> 这是引用
+
+```javascript
+console.log('Hello, World!');
+```
+"
+                ></textarea>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel">
+                <div class="panel-header">
+                    <h2>👀 实时预览</h2>
+                    <span class="tip">💡 点击复制后粘贴到微信</span>
+                </div>
+                <div id="preview" class="preview wechat-style"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ by <a href="https://github.com/DongboShi" target="_blank">@DongboShi</a></p>
+            <p>纯前端实现 · 无需后端 · 开源免费</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ const copyBtn = document.getElementById('copyBtn');
 const clearBtn = document.getElementById('clearBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const themeToggle = document.getElementById('themeToggle');
+const themeSelector = document.getElementById('themeSelector');
 const wordCount = document.getElementById('wordCount');
 const toast = document.getElementById('toast');
 
@@ -161,6 +162,27 @@ function loadTheme() {
         document.body.classList.add('dark-mode');
         themeToggle.textContent = '☀️ 浅色模式';
     }
+    
+    // Load content theme
+    const contentTheme = localStorage.getItem('contentTheme') || 'wechat';
+    themeSelector.value = contentTheme;
+    applyContentTheme(contentTheme);
+}
+
+// Content theme switching
+themeSelector.addEventListener('change', (e) => {
+    const selectedTheme = e.target.value;
+    applyContentTheme(selectedTheme);
+    localStorage.setItem('contentTheme', selectedTheme);
+    showToast(`🎨 已切换到 ${e.target.selectedOptions[0].text} 主题`);
+});
+
+function applyContentTheme(theme) {
+    // Remove all theme classes
+    preview.className = 'preview';
+    
+    // Apply selected theme class
+    preview.classList.add(`${theme}-style`);
 }
 
 // ========================================
