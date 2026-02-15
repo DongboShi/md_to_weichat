@@ -1,96 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown 微信公众号编辑器</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <title>Theme Selector Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .toolbar { margin: 20px; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1>📝 Markdown 微信公众号编辑器</h1>
-            <div class="toolbar">
-                <button id="copyBtn" class="btn btn-primary" title="复制富文本到剪贴板">📋 复制富文本</button>
-                <button id="clearBtn" class="btn btn-secondary" title="清空编辑器内容">🗑️ 清空内容</button>
-                <button id="downloadBtn" class="btn btn-secondary" title="下载 Markdown 文件">💾 下载 MD</button>
-                <button id="themeToggle" class="btn btn-secondary" title="切换深色/浅色模式">🌙 深色模式</button>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Editor Panel -->
-            <div class="editor-panel">
-                <div class="panel-header">
-                    <h2>✍️ 编辑器</h2>
-                    <span class="word-count" id="wordCount">0 字</span>
-                </div>
-                <textarea id="editor" class="editor" placeholder="在此输入 Markdown 内容...
-
-# 示例标题
-
-## 二级标题
-
-这是一段**粗体文字**和*斜体文字*。
-
-### 代码示例
-
-```javascript
-function hello() {
-    console.log('Hello, WeChat!');
-}
-```
-
-### 列表
-
-- 项目一
-- 项目二
-- 项目三
-
-### 引用
-
-> 这是一段引用文字
-
-### 表格
-
-| 姓名 | 年龄 | 城市 |
-|------|------|------|
-| 张三 | 25   | 北京 |
-| 李四 | 30   | 上海 |
-
----
-
-**提示**：编辑完成后点击「复制富文本」按钮，然后直接粘贴到微信公众号后台即可！
-"></textarea>
-            </div>
-
-            <!-- Preview Panel -->
-            <div class="preview-panel">
-                <div class="panel-header">
-                    <h2>👁️ 预览</h2>
-                    <span class="tip">微信公众号样式</span>
-                </div>
-                <div id="preview" class="preview wechat-style"></div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>💡 提示：内容会自动保存到浏览器本地存储 | 快捷键：Tab 插入缩进，Ctrl/Cmd+S 保存</p>
-            <p>Made with ❤️ by <a href="https://github.com/DongboShi" target="_blank">@DongboShi</a></p>
-        </footer>
+    <div class="toolbar">
+        <label for="themeSelector">Choose a theme:</label>
+        <select id="themeSelector">
+            <option value="wechatGreen">WeChat Green</option>
+            <option value="techBlue">Tech Blue</option>
+            <option value="elegantPurple">Elegant Purple</option>
+            <option value="minimalistBW">Minimalist BW</option>
+            <option value="warmOrange">Warm Orange</option>
+            <option value="freshMint">Fresh Mint</option>
+            <option value="darkNight">Dark Night</option>
+        </select>
     </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
-
-    <script src="script.js"></script>
+    <script>
+        const themeSelector = document.getElementById('themeSelector');
+        themeSelector.addEventListener('change', function() {
+            document.body.className = this.value; // Here you can implement theme change logic
+        });
+    </script>
 </body>
 </html>
