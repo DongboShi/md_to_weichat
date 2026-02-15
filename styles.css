@@ -207,6 +207,17 @@ body {
     margin: 20px 0 15px;
     padding-bottom: 10px;
     border-bottom: 3px solid var(--wechat-green);
+    position: relative;
+}
+
+.wechat-style h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #34495e;
 }
 
 .wechat-style h2 {
@@ -263,6 +274,11 @@ body {
 
 .wechat-style li {
     margin: 6px 0;
+    padding-left: 4px;
+}
+
+.wechat-style ul li::marker {
+    color: var(--wechat-green);
 }
 
 .wechat-style blockquote {
@@ -346,32 +362,35 @@ body {
 .zhihu-style {
     font-size: 16px;
     color: #1a1a1a;
-    line-height: 1.8;
+    line-height: 1.9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
 }
 
 .zhihu-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
     color: #0084ff;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #0084ff;
+    margin: 25px 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #0084ff;
+    letter-spacing: 0.5px;
 }
 
 .zhihu-style h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 21px;
+    font-weight: 600;
     color: #0066cc;
-    margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #0084ff;
+    margin: 20px 0 14px;
+    padding-left: 14px;
+    border-left: 5px solid #0084ff;
+    line-height: 1.4;
 }
 
 .zhihu-style h3 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 19px;
+    font-weight: 600;
     color: #0066cc;
-    margin: 16px 0 10px;
+    margin: 18px 0 12px;
 }
 
 .zhihu-style h4,
@@ -384,13 +403,14 @@ body {
 }
 
 .zhihu-style p {
-    margin: 12px 0;
+    margin: 14px 0;
     text-align: justify;
+    letter-spacing: 0.2px;
 }
 
 .zhihu-style strong {
     color: #0084ff;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .zhihu-style em {
@@ -402,43 +422,48 @@ body {
     color: #0084ff;
     text-decoration: none;
     border-bottom: 1px solid #0084ff;
+    padding-bottom: 1px;
 }
 
 .zhihu-style ul,
 .zhihu-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .zhihu-style li {
-    margin: 6px 0;
+    margin: 8px 0;
+    line-height: 1.8;
 }
 
 .zhihu-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
+    margin: 18px 0;
+    padding: 14px 18px;
     background: #f0f7ff;
     border-left: 4px solid #0084ff;
     color: #444;
-    font-style: italic;
+    font-style: normal;
+    line-height: 1.8;
 }
 
 .zhihu-style code {
     background: #e8f4ff;
     color: #0066cc;
-    padding: 2px 6px;
+    padding: 3px 7px;
     border-radius: 3px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .zhihu-style pre {
     background: #f6f8fa;
-    padding: 15px;
+    padding: 16px;
     border-radius: 6px;
     overflow-x: auto;
-    margin: 15px 0;
+    margin: 16px 0;
     border: 1px solid #d1e7ff;
+    line-height: 1.6;
 }
 
 .zhihu-style pre code {
@@ -495,50 +520,84 @@ body {
     font-size: 16px;
     color: #2e2e2e;
     line-height: 1.8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .juejin-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 700;
     color: #6366f1;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #6366f1;
+    margin: 25px 0 18px;
+    padding: 12px 18px;
+    padding-left: 25px;
+    border-bottom: none;
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border-radius: 8px;
+    position: relative;
+    border-left: 5px solid #6366f1;
+}
+
+.juejin-style h1::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(to bottom, #6366f1, #7c3aed);
+    border-radius: 2px;
 }
 
 .juejin-style h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 21px;
+    font-weight: 600;
     color: #7c3aed;
-    margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #6366f1;
+    margin: 22px 0 14px;
+    padding: 10px 16px;
+    padding-left: 20px;
+    border-left: none;
+    background: linear-gradient(90deg, #f5f3ff, transparent);
+    border-radius: 6px;
+    position: relative;
+}
+
+.juejin-style h2::before {
+    content: '#';
+    position: absolute;
+    left: 8px;
+    color: #6366f1;
+    font-weight: 700;
 }
 
 .juejin-style h3 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 19px;
+    font-weight: 600;
     color: #7c3aed;
-    margin: 16px 0 10px;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #6366f1;
 }
 
 .juejin-style h4,
 .juejin-style h5,
 .juejin-style h6 {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 17px;
+    font-weight: 600;
     color: #555;
-    margin: 14px 0 8px;
+    margin: 16px 0 10px;
 }
 
 .juejin-style p {
-    margin: 12px 0;
+    margin: 14px 0;
     text-align: justify;
+    letter-spacing: 0.3px;
 }
 
 .juejin-style strong {
     color: #6366f1;
-    font-weight: bold;
+    font-weight: 700;
+    padding: 0 2px;
 }
 
 .juejin-style em {
@@ -549,74 +608,92 @@ body {
 .juejin-style a {
     color: #6366f1;
     text-decoration: none;
-    border-bottom: 1px solid #6366f1;
+    border-bottom: 2px solid #ddd6fe;
+    transition: border-color 0.3s ease;
 }
 
 .juejin-style ul,
 .juejin-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .juejin-style li {
-    margin: 6px 0;
+    margin: 8px 0;
+    padding-left: 5px;
+}
+
+.juejin-style ul li::marker {
+    color: #6366f1;
+    content: '▸ ';
 }
 
 .juejin-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
-    background: #f5f3ff;
+    margin: 18px 0;
+    padding: 15px 20px;
+    padding-left: 25px;
+    background: linear-gradient(to right, #f5f3ff, #faf9fc);
     border-left: 4px solid #6366f1;
     color: #555;
-    font-style: italic;
+    font-style: normal;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
 
 .juejin-style code {
-    background: #ede9fe;
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
     color: #7c3aed;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .juejin-style pre {
     background: #faf9fc;
-    padding: 15px;
-    border-radius: 6px;
+    padding: 18px;
+    border-radius: 8px;
     overflow-x: auto;
-    margin: 15px 0;
-    border: 1px solid #ddd6fe;
+    margin: 18px 0;
+    border: 2px solid #ddd6fe;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
 }
 
 .juejin-style pre code {
     background: transparent;
     color: inherit;
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .juejin-style table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-    margin: 15px 0;
+    margin: 18px 0;
     font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
 }
 
 .juejin-style table th {
-    background: #6366f1;
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
     color: white;
-    padding: 10px;
+    padding: 12px 15px;
     text-align: left;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .juejin-style table td {
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid #ddd6fe;
+    background: white;
 }
 
-.juejin-style table tr:nth-child(even) {
+.juejin-style table tr:nth-child(even) td {
     background: #f8f7fc;
 }
 
@@ -624,15 +701,16 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
 }
 
 .juejin-style hr {
     border: none;
-    border-top: 2px solid #ddd6fe;
-    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd6fe, transparent);
+    margin: 25px 0;
 }
 
 /* ========================================
@@ -791,53 +869,60 @@ body {
    ======================================== */
 
 .simple-style {
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
-    line-height: 1.8;
+    line-height: 1.9;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    letter-spacing: 0.3px;
 }
 
 .simple-style h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #888;
+    font-size: 28px;
+    font-weight: 300;
+    color: #222;
+    margin: 30px 0 20px;
+    padding-bottom: 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .simple-style h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #444;
-    margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #888;
+    font-size: 22px;
+    font-weight: 400;
+    color: #333;
+    margin: 25px 0 15px;
+    padding-left: 0;
+    border-left: none;
+    letter-spacing: 0.5px;
 }
 
 .simple-style h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
-    margin: 16px 0 10px;
+    font-size: 19px;
+    font-weight: 400;
+    color: #444;
+    margin: 20px 0 12px;
+    letter-spacing: 0.3px;
 }
 
 .simple-style h4,
 .simple-style h5,
 .simple-style h6 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #666;
-    margin: 14px 0 8px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #555;
+    margin: 18px 0 10px;
 }
 
 .simple-style p {
-    margin: 12px 0;
+    margin: 16px 0;
     text-align: justify;
+    text-indent: 2em;
 }
 
 .simple-style strong {
-    color: #222;
-    font-weight: bold;
+    color: #000;
+    font-weight: 600;
 }
 
 .simple-style em {
@@ -846,45 +931,49 @@ body {
 }
 
 .simple-style a {
-    color: #666;
-    text-decoration: underline;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
 }
 
 .simple-style ul,
 .simple-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 18px 0;
+    padding-left: 40px;
 }
 
 .simple-style li {
-    margin: 6px 0;
+    margin: 10px 0;
+    line-height: 2;
 }
 
 .simple-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
-    background: #f5f5f5;
-    border-left: 4px solid #888;
+    margin: 25px 0;
+    padding: 20px 30px;
+    background: transparent;
+    border-left: 2px solid #ccc;
     color: #666;
     font-style: italic;
+    text-indent: 0;
 }
 
 .simple-style code {
-    background: #f0f0f0;
-    color: #666;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: 'Consolas', 'Monaco', monospace;
+    background: #f8f8f8;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 0;
+    font-family: 'Monaco', 'Courier New', monospace;
     font-size: 14px;
+    border: 1px solid #eee;
 }
 
 .simple-style pre {
     background: #fafafa;
-    padding: 15px;
-    border-radius: 6px;
+    padding: 20px;
+    border-radius: 0;
     overflow-x: auto;
-    margin: 15px 0;
-    border: 1px solid #e0e0e0;
+    margin: 20px 0;
+    border: 1px solid #e5e5e5;
 }
 
 .simple-style pre code {
@@ -940,32 +1029,49 @@ body {
 .elegant-style {
     font-size: 16px;
     color: #4a4a4a;
-    line-height: 1.8;
+    line-height: 1.9;
+    font-family: 'Palatino', 'Georgia', serif;
 }
 
 .elegant-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
     color: #ec4899;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #ec4899;
+    margin: 25px 0 20px;
+    padding: 15px 20px;
+    border-bottom: none;
+    background: linear-gradient(to right, #fef1f7, transparent);
+    border-left: 5px solid #ec4899;
+    text-shadow: 1px 1px 2px rgba(236, 72, 153, 0.1);
 }
 
 .elegant-style h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     color: #db2777;
-    margin: 18px 0 12px;
-    padding-left: 12px;
+    margin: 22px 0 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-left: 4px solid #ec4899;
+    background: linear-gradient(90deg, #fef1f7 0%, transparent 100%);
+    position: relative;
+}
+
+.elegant-style h2::before {
+    content: '✦';
+    color: #ec4899;
+    margin-right: 10px;
+    font-size: 0.9em;
 }
 
 .elegant-style h3 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 19px;
+    font-weight: 600;
     color: #db2777;
-    margin: 16px 0 10px;
+    margin: 18px 0 12px;
+    font-style: italic;
 }
 
 .elegant-style h4,
@@ -978,13 +1084,15 @@ body {
 }
 
 .elegant-style p {
-    margin: 12px 0;
+    margin: 14px 0;
     text-align: justify;
+    letter-spacing: 0.5px;
 }
 
 .elegant-style strong {
     color: #ec4899;
-    font-weight: bold;
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 60%, rgba(236, 72, 153, 0.15) 60%);
 }
 
 .elegant-style em {
@@ -995,44 +1103,63 @@ body {
 .elegant-style a {
     color: #ec4899;
     text-decoration: none;
-    border-bottom: 1px solid #ec4899;
+    border-bottom: 2px dotted #ec4899;
+    transition: all 0.3s ease;
 }
 
 .elegant-style ul,
 .elegant-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .elegant-style li {
-    margin: 6px 0;
+    margin: 8px 0;
+}
+
+.elegant-style li::marker {
+    color: #ec4899;
+    font-weight: bold;
 }
 
 .elegant-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
+    margin: 20px 0;
+    padding: 18px 25px;
     background: #fef1f7;
-    border-left: 4px solid #ec4899;
+    border-left: 5px double #ec4899;
     color: #666;
     font-style: italic;
+    position: relative;
+}
+
+.elegant-style blockquote::before {
+    content: '"';
+    font-size: 48px;
+    color: #fce7f3;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    font-family: Georgia, serif;
 }
 
 .elegant-style code {
     background: #fce7f3;
     color: #db2777;
-    padding: 2px 6px;
-    border-radius: 3px;
+    padding: 3px 8px;
+    border-radius: 4px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 14px;
+    border: 1px solid #fce7f3;
 }
 
 .elegant-style pre {
     background: #fdf8fb;
-    padding: 15px;
-    border-radius: 6px;
+    padding: 18px;
+    border-radius: 8px;
     overflow-x: auto;
-    margin: 15px 0;
-    border: 1px solid #fce7f3;
+    margin: 18px 0;
+    border: 2px solid #fce7f3;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.08);
 }
 
 .elegant-style pre code {
@@ -1045,20 +1172,24 @@ body {
 .elegant-style table {
     border-collapse: collapse;
     width: 100%;
-    margin: 15px 0;
+    margin: 18px 0;
     font-size: 14px;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .elegant-style table th {
-    background: #ec4899;
+    background: linear-gradient(135deg, #ec4899, #db2777);
     color: white;
-    padding: 10px;
+    padding: 12px 15px;
     text-align: left;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .elegant-style table td {
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid #fce7f3;
 }
 
@@ -1070,15 +1201,17 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.15);
+    border: 3px solid #fef1f7;
 }
 
 .elegant-style hr {
     border: none;
-    border-top: 2px solid #fce7f3;
-    margin: 20px 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #fce7f3, transparent);
+    margin: 30px 0;
 }
 
 /* ========================================
