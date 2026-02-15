@@ -1,0 +1,476 @@
+/* ========================================
+   全局样式
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light Mode Colors */
+    --bg-color: #f5f7fa;
+    --container-bg: #ffffff;
+    --text-color: #2c3e50;
+    --border-color: #e1e8ed;
+    --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --primary-color: #07c160;
+    --secondary-color: #576b95;
+    --danger-color: #fa5151;
+    --code-bg: #f6f8fa;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    
+    /* WeChat Brand Colors */
+    --wechat-green: #07c160;
+    --wechat-blue: #576b95;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+/* ========================================
+   容器布局
+   ======================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   Header 样式
+   ======================================== */
+
+.header {
+    background: var(--header-bg);
+    color: white;
+    padding: 20px 30px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--wechat-green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #06ad56;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   主内容区域
+   ======================================== */
+
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.editor-panel,
+.preview-panel {
+    background: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+}
+
+.panel-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.word-count {
+    font-size: 14px;
+    color: #8590a6;
+}
+
+.tip {
+    font-size: 12px;
+    color: var(--wechat-green);
+    background: rgba(7, 193, 96, 0.1);
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   编辑器样式
+   ======================================== */
+
+.editor {
+    flex: 1;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    resize: none;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+.editor::placeholder {
+    color: #bfbfbf;
+}
+
+/* ========================================
+   预览区域样式
+   ======================================== */
+
+.preview {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: white;
+}
+
+/* ========================================
+   微信公众号样式
+   ======================================== */
+
+.wechat-style {
+    font-size: 16px;
+    color: #3f3f3f;
+    line-height: 1.8;
+}
+
+.wechat-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--wechat-green);
+}
+
+.wechat-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid var(--wechat-green);
+}
+
+.wechat-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e;
+    margin: 16px 0 10px;
+}
+
+.wechat-style h4,
+.wechat-style h5,
+.wechat-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495e;
+    margin: 14px 0 8px;
+}
+
+.wechat-style p {
+    margin: 12px 0;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.wechat-style strong {
+    color: var(--wechat-green);
+    font-weight: bold;
+}
+
+.wechat-style em {
+    color: var(--wechat-blue);
+    font-style: italic;
+}
+
+.wechat-style a {
+    color: #576b95;
+    text-decoration: underline;
+}
+
+.wechat-style ul,
+.wechat-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.wechat-style li {
+    margin: 6px 0;
+}
+
+.wechat-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f7f7f7;
+    border-left: 4px solid var(--wechat-green);
+    color: #666;
+    font-style: italic;
+}
+
+.wechat-style code {
+    background: #fff5f5;
+    color: #ff502c;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.wechat-style pre {
+    background: #f6f8fa;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #e1e4e8;
+}
+
+.wechat-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.wechat-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.wechat-style table th {
+    background: var(--wechat-green);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.wechat-style table td {
+    padding: 10px;
+    border: 1px solid #e1e8ed;
+}
+
+.wechat-style table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.wechat-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wechat-style hr {
+    border: none;
+    border-top: 2px solid #e1e8ed;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Footer 样式
+   ======================================== */
+
+.footer {
+    background: var(--container-bg);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 14px;
+    color: #8590a6;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: var(--wechat-green);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Toast 通知
+   ======================================== */
+
+.toast {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: top 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toast.show {
+    top: 20px;
+}
+
+/* ========================================
+   深色模式
+   ======================================== */
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #e4e4e4;
+    --border-color: #404040;
+    --code-bg: #1e1e1e;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .wechat-style {
+    color: #e4e4e4;
+    background: #2d2d2d;
+}
+
+body.dark-mode .wechat-style h1,
+body.dark-mode .wechat-style h2,
+body.dark-mode .wechat-style h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .wechat-style pre {
+    background: #1e1e1e;
+    border-color: #404040;
+}
+
+body.dark-mode .wechat-style blockquote {
+    background: #383838;
+    color: #b0b0b0;
+}
+
+body.dark-mode .wechat-style table td {
+    border-color: #404040;
+}
+
+body.dark-mode .wechat-style table tr:nth-child(even) {
+    background: #383838;
+}
+
+/* ========================================
+   响应式设计
+   ======================================== */
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .toolbar {
+        justify-content: center;
+    }
+    
+    .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* ========================================
+   滚动条美化
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
