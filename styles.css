@@ -1610,51 +1610,61 @@ body {
 .red-style {
     font-size: 16px;
     color: #1f2937;
-    line-height: 1.8;
+    line-height: 1.75;
+    font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .red-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 800;
     color: #dc2626;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #dc2626;
+    margin: 22px 0 16px;
+    padding: 10px 0;
+    padding-bottom: 12px;
+    border-bottom: 4px double #dc2626;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
 }
 
 .red-style h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 21px;
+    font-weight: 700;
     color: #b91c1c;
     margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #dc2626;
+    padding: 8px 0;
+    padding-left: 15px;
+    border-left: 6px solid #dc2626;
+    background: linear-gradient(90deg, rgba(220, 38, 38, 0.08), transparent);
 }
 
 .red-style h3 {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
     color: #b91c1c;
     margin: 16px 0 10px;
+    text-decoration: underline;
+    text-decoration-color: #fecaca;
+    text-underline-offset: 4px;
 }
 
 .red-style h4,
 .red-style h5,
 .red-style h6 {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     color: #4b5563;
     margin: 14px 0 8px;
 }
 
 .red-style p {
-    margin: 12px 0;
+    margin: 13px 0;
     text-align: justify;
 }
 
 .red-style strong {
     color: #dc2626;
-    font-weight: bold;
+    font-weight: 800;
+    letter-spacing: 0.3px;
 }
 
 .red-style em {
@@ -1665,44 +1675,56 @@ body {
 .red-style a {
     color: #dc2626;
     text-decoration: none;
-    border-bottom: 1px solid #dc2626;
+    border-bottom: 2px solid #dc2626;
+    font-weight: 600;
 }
 
 .red-style ul,
 .red-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .red-style li {
-    margin: 6px 0;
+    margin: 7px 0;
+}
+
+.red-style ul li::marker {
+    color: #dc2626;
+    content: '■ ';
 }
 
 .red-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
-    background: #fef2f2;
-    border-left: 4px solid #dc2626;
+    margin: 16px 0;
+    padding: 14px 18px;
+    padding-left: 22px;
+    background: linear-gradient(to right, #fef2f2, #ffffff);
+    border-left: 5px solid #dc2626;
     color: #4b5563;
-    font-style: italic;
+    font-style: normal;
+    font-weight: 500;
+    box-shadow: 2px 2px 4px rgba(220, 38, 38, 0.1);
 }
 
 .red-style code {
     background: #fee2e2;
     color: #991b1b;
-    padding: 2px 6px;
+    padding: 3px 7px;
     border-radius: 3px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #fecaca;
 }
 
 .red-style pre {
     background: #fef2f2;
-    padding: 15px;
+    padding: 16px;
     border-radius: 6px;
     overflow-x: auto;
-    margin: 15px 0;
-    border: 1px solid #fecaca;
+    margin: 16px 0;
+    border: 2px solid #fecaca;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.1);
 }
 
 .red-style pre code {
@@ -1759,29 +1781,46 @@ body {
     font-size: 16px;
     color: #292524;
     line-height: 1.8;
+    font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
 }
 
 .amber-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: 600;
     color: #f59e0b;
-    margin: 20px 0 15px;
+    margin: 22px 0 16px;
+    padding: 10px 18px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #f59e0b;
+    border-bottom: none;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
 }
 
 .amber-style h2 {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     color: #d97706;
     margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #f59e0b;
+    padding: 8px 14px;
+    padding-left: 18px;
+    border-left: none;
+    background: linear-gradient(to right, #fffbeb, transparent);
+    border-radius: 4px;
+    position: relative;
+}
+
+.amber-style h2::before {
+    content: '☀';
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-size: 1.1em;
 }
 
 .amber-style h3 {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     color: #d97706;
     margin: 16px 0 10px;
 }
@@ -1790,19 +1829,19 @@ body {
 .amber-style h5,
 .amber-style h6 {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     color: #57534e;
     margin: 14px 0 8px;
 }
 
 .amber-style p {
-    margin: 12px 0;
+    margin: 13px 0;
     text-align: justify;
 }
 
 .amber-style strong {
     color: #f59e0b;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .amber-style em {
@@ -1813,26 +1852,32 @@ body {
 .amber-style a {
     color: #f59e0b;
     text-decoration: none;
-    border-bottom: 1px solid #f59e0b;
+    border-bottom: 2px wavy #fde68a;
 }
 
 .amber-style ul,
 .amber-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .amber-style li {
-    margin: 6px 0;
+    margin: 7px 0;
+}
+
+.amber-style ul li::marker {
+    color: #f59e0b;
+    content: '◉ ';
 }
 
 .amber-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
-    background: #fffbeb;
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: linear-gradient(to bottom, #fffbeb, #fef3c7);
     border-left: 4px solid #f59e0b;
     color: #57534e;
-    font-style: italic;
+    font-style: normal;
+    border-radius: 0 6px 6px 0;
 }
 
 .amber-style code {
@@ -1906,30 +1951,46 @@ body {
 .mint-style {
     font-size: 16px;
     color: #1e293b;
-    line-height: 1.8;
+    line-height: 1.85;
+    font-family: 'Verdana', 'Geneva', sans-serif;
 }
 
 .mint-style h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: 500;
     color: #10b981;
-    margin: 20px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #10b981;
+    margin: 22px 0 16px;
+    padding: 12px 20px;
+    padding-bottom: 12px;
+    border-bottom: none;
+    background: radial-gradient(circle at left, #f0fdf4, transparent);
+    border-left: 8px solid #10b981;
+    border-radius: 0 15px 15px 0;
 }
 
 .mint-style h2 {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     color: #059669;
     margin: 18px 0 12px;
-    padding-left: 12px;
-    border-left: 4px solid #10b981;
+    padding: 8px 14px;
+    padding-left: 18px;
+    border-left: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #d1fae5, #f0fdf4, transparent);
+    position: relative;
+}
+
+.mint-style h2::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    font-size: 0.9em;
 }
 
 .mint-style h3 {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     color: #059669;
     margin: 16px 0 10px;
 }
@@ -1938,19 +1999,19 @@ body {
 .mint-style h5,
 .mint-style h6 {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     color: #475569;
     margin: 14px 0 8px;
 }
 
 .mint-style p {
-    margin: 12px 0;
+    margin: 14px 0;
     text-align: justify;
 }
 
 .mint-style strong {
     color: #10b981;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .mint-style em {
@@ -1961,44 +2022,51 @@ body {
 .mint-style a {
     color: #10b981;
     text-decoration: none;
-    border-bottom: 1px solid #10b981;
+    border-bottom: 2px solid #a7f3d0;
 }
 
 .mint-style ul,
 .mint-style ol {
-    margin: 12px 0;
-    padding-left: 28px;
+    margin: 14px 0;
+    padding-left: 30px;
 }
 
 .mint-style li {
-    margin: 6px 0;
+    margin: 8px 0;
+}
+
+.mint-style ul li::marker {
+    color: #10b981;
+    content: '✓ ';
 }
 
 .mint-style blockquote {
-    margin: 15px 0;
-    padding: 12px 15px;
-    background: #f0fdf4;
-    border-left: 4px solid #10b981;
+    margin: 18px 0;
+    padding: 16px 20px;
+    background: radial-gradient(circle at top left, #f0fdf4, #ffffff);
+    border-left: 5px solid #10b981;
+    border-radius: 8px;
     color: #475569;
-    font-style: italic;
+    font-style: normal;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.08);
 }
 
 .mint-style code {
     background: #d1fae5;
     color: #047857;
-    padding: 2px 6px;
-    border-radius: 3px;
+    padding: 3px 7px;
+    border-radius: 5px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 14px;
 }
 
 .mint-style pre {
     background: #f0fdf4;
-    padding: 15px;
-    border-radius: 6px;
+    padding: 16px;
+    border-radius: 8px;
     overflow-x: auto;
-    margin: 15px 0;
-    border: 1px solid #a7f3d0;
+    margin: 16px 0;
+    border: 2px solid #a7f3d0;
 }
 
 .mint-style pre code {
