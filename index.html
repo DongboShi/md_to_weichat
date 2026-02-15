@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Selector Example</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .toolbar { margin: 20px; }
-    </style>
-</head>
-<body>
-    <div class="toolbar">
-        <label for="themeSelector">Choose a theme:</label>
-        <select id="themeSelector">
-            <option value="wechatGreen">WeChat Green</option>
-            <option value="techBlue">Tech Blue</option>
-            <option value="elegantPurple">Elegant Purple</option>
-            <option value="minimalistBW">Minimalist BW</option>
-            <option value="warmOrange">Warm Orange</option>
-            <option value="freshMint">Fresh Mint</option>
-            <option value="darkNight">Dark Night</option>
-        </select>
-    </div>
-    <script>
-        const themeSelector = document.getElementById('themeSelector');
-        themeSelector.addEventListener('change', function() {
-            document.body.className = this.value; // Here you can implement theme change logic
-        });
-    </script>
-</body>
-</html>
+<select id="themeSelector">
+  <option value="wechat">WeChat Green</option>
+  <option value="zhihu">Zhihu Blue</option>
+  <option value="juejin">Juejin Purple</option>
+  <option value="dark">Dark Night</option>
+  <option value="simple">Simple Gray</option>
+  <option value="elegant">Elegant Pink</option>
+</select>
