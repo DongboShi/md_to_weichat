@@ -340,6 +340,1488 @@ body {
 }
 
 /* ========================================
+   Zhihu Blue 主题样式
+   ======================================== */
+
+.zhihu-style {
+    font-size: 16px;
+    color: #1a1a1a;
+    line-height: 1.8;
+}
+
+.zhihu-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0084ff;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0084ff;
+}
+
+.zhihu-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0066cc;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #0084ff;
+}
+
+.zhihu-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0066cc;
+    margin: 16px 0 10px;
+}
+
+.zhihu-style h4,
+.zhihu-style h5,
+.zhihu-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin: 14px 0 8px;
+}
+
+.zhihu-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.zhihu-style strong {
+    color: #0084ff;
+    font-weight: bold;
+}
+
+.zhihu-style em {
+    color: #0066cc;
+    font-style: italic;
+}
+
+.zhihu-style a {
+    color: #0084ff;
+    text-decoration: none;
+    border-bottom: 1px solid #0084ff;
+}
+
+.zhihu-style ul,
+.zhihu-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.zhihu-style li {
+    margin: 6px 0;
+}
+
+.zhihu-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f0f7ff;
+    border-left: 4px solid #0084ff;
+    color: #444;
+    font-style: italic;
+}
+
+.zhihu-style code {
+    background: #e8f4ff;
+    color: #0066cc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.zhihu-style pre {
+    background: #f6f8fa;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #d1e7ff;
+}
+
+.zhihu-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.zhihu-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.zhihu-style table th {
+    background: #0084ff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.zhihu-style table td {
+    padding: 10px;
+    border: 1px solid #d1e7ff;
+}
+
+.zhihu-style table tr:nth-child(even) {
+    background: #f8fafe;
+}
+
+.zhihu-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 132, 255, 0.1);
+}
+
+.zhihu-style hr {
+    border: none;
+    border-top: 2px solid #d1e7ff;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Juejin Purple 主题样式
+   ======================================== */
+
+.juejin-style {
+    font-size: 16px;
+    color: #2e2e2e;
+    line-height: 1.8;
+}
+
+.juejin-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6366f1;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #6366f1;
+}
+
+.juejin-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7c3aed;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #6366f1;
+}
+
+.juejin-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7c3aed;
+    margin: 16px 0 10px;
+}
+
+.juejin-style h4,
+.juejin-style h5,
+.juejin-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    margin: 14px 0 8px;
+}
+
+.juejin-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.juejin-style strong {
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.juejin-style em {
+    color: #7c3aed;
+    font-style: italic;
+}
+
+.juejin-style a {
+    color: #6366f1;
+    text-decoration: none;
+    border-bottom: 1px solid #6366f1;
+}
+
+.juejin-style ul,
+.juejin-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.juejin-style li {
+    margin: 6px 0;
+}
+
+.juejin-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f5f3ff;
+    border-left: 4px solid #6366f1;
+    color: #555;
+    font-style: italic;
+}
+
+.juejin-style code {
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.juejin-style pre {
+    background: #faf9fc;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #ddd6fe;
+}
+
+.juejin-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.juejin-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.juejin-style table th {
+    background: #6366f1;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.juejin-style table td {
+    padding: 10px;
+    border: 1px solid #ddd6fe;
+}
+
+.juejin-style table tr:nth-child(even) {
+    background: #f8f7fc;
+}
+
+.juejin-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+.juejin-style hr {
+    border: none;
+    border-top: 2px solid #ddd6fe;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Dark Night 主题样式
+   ======================================== */
+
+.dark-style {
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.8;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.dark-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #61dafb;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #61dafb;
+}
+
+.dark-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #61dafb;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #61dafb;
+}
+
+.dark-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #61dafb;
+    margin: 16px 0 10px;
+}
+
+.dark-style h4,
+.dark-style h5,
+.dark-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a0a0a0;
+    margin: 14px 0 8px;
+}
+
+.dark-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.dark-style strong {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.dark-style em {
+    color: #ff79c6;
+    font-style: italic;
+}
+
+.dark-style a {
+    color: #61dafb;
+    text-decoration: none;
+    border-bottom: 1px solid #61dafb;
+}
+
+.dark-style ul,
+.dark-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.dark-style li {
+    margin: 6px 0;
+}
+
+.dark-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #2a2a2a;
+    border-left: 4px solid #61dafb;
+    color: #b0b0b0;
+    font-style: italic;
+}
+
+.dark-style code {
+    background: #2a2a2a;
+    color: #ff79c6;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.dark-style pre {
+    background: #0d0d0d;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #3a3a3a;
+}
+
+.dark-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.dark-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.dark-style table th {
+    background: #61dafb;
+    color: #1e1e1e;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.dark-style table td {
+    padding: 10px;
+    border: 1px solid #3a3a3a;
+}
+
+.dark-style table tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+.dark-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(97, 218, 251, 0.2);
+}
+
+.dark-style hr {
+    border: none;
+    border-top: 2px solid #3a3a3a;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Simple Gray 主题样式
+   ======================================== */
+
+.simple-style {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.simple-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #888;
+}
+
+.simple-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #888;
+}
+
+.simple-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin: 16px 0 10px;
+}
+
+.simple-style h4,
+.simple-style h5,
+.simple-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    margin: 14px 0 8px;
+}
+
+.simple-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.simple-style strong {
+    color: #222;
+    font-weight: bold;
+}
+
+.simple-style em {
+    color: #555;
+    font-style: italic;
+}
+
+.simple-style a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.simple-style ul,
+.simple-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.simple-style li {
+    margin: 6px 0;
+}
+
+.simple-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f5f5f5;
+    border-left: 4px solid #888;
+    color: #666;
+    font-style: italic;
+}
+
+.simple-style code {
+    background: #f0f0f0;
+    color: #666;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.simple-style pre {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.simple-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.simple-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.simple-style table th {
+    background: #888;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.simple-style table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.simple-style table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.simple-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.simple-style hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Elegant Pink 主题样式
+   ======================================== */
+
+.elegant-style {
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.elegant-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ec4899;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ec4899;
+}
+
+.elegant-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #db2777;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #ec4899;
+}
+
+.elegant-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #db2777;
+    margin: 16px 0 10px;
+}
+
+.elegant-style h4,
+.elegant-style h5,
+.elegant-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    margin: 14px 0 8px;
+}
+
+.elegant-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.elegant-style strong {
+    color: #ec4899;
+    font-weight: bold;
+}
+
+.elegant-style em {
+    color: #db2777;
+    font-style: italic;
+}
+
+.elegant-style a {
+    color: #ec4899;
+    text-decoration: none;
+    border-bottom: 1px solid #ec4899;
+}
+
+.elegant-style ul,
+.elegant-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.elegant-style li {
+    margin: 6px 0;
+}
+
+.elegant-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #fef1f7;
+    border-left: 4px solid #ec4899;
+    color: #666;
+    font-style: italic;
+}
+
+.elegant-style code {
+    background: #fce7f3;
+    color: #db2777;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.elegant-style pre {
+    background: #fdf8fb;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #fce7f3;
+}
+
+.elegant-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.elegant-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.elegant-style table th {
+    background: #ec4899;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.elegant-style table td {
+    padding: 10px;
+    border: 1px solid #fce7f3;
+}
+
+.elegant-style table tr:nth-child(even) {
+    background: #fef6f9;
+}
+
+.elegant-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+}
+
+.elegant-style hr {
+    border: none;
+    border-top: 2px solid #fce7f3;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Orange Vibrant 主题样式（新增）
+   ======================================== */
+
+.orange-style {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.orange-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6b35;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ff6b35;
+}
+
+.orange-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff8c42;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #ff6b35;
+}
+
+.orange-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c42;
+    margin: 16px 0 10px;
+}
+
+.orange-style h4,
+.orange-style h5,
+.orange-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    margin: 14px 0 8px;
+}
+
+.orange-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.orange-style strong {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+.orange-style em {
+    color: #ff8c42;
+    font-style: italic;
+}
+
+.orange-style a {
+    color: #ff6b35;
+    text-decoration: none;
+    border-bottom: 1px solid #ff6b35;
+}
+
+.orange-style ul,
+.orange-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.orange-style li {
+    margin: 6px 0;
+}
+
+.orange-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #fff5f0;
+    border-left: 4px solid #ff6b35;
+    color: #555;
+    font-style: italic;
+}
+
+.orange-style code {
+    background: #ffebe0;
+    color: #e65100;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.orange-style pre {
+    background: #fff8f5;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #ffd4b8;
+}
+
+.orange-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.orange-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.orange-style table th {
+    background: #ff6b35;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.orange-style table td {
+    padding: 10px;
+    border: 1px solid #ffd4b8;
+}
+
+.orange-style table tr:nth-child(even) {
+    background: #fffaf7;
+}
+
+.orange-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
+}
+
+.orange-style hr {
+    border: none;
+    border-top: 2px solid #ffd4b8;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Teal Ocean 主题样式（新增）
+   ======================================== */
+
+.teal-style {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.8;
+}
+
+.teal-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #14b8a6;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #14b8a6;
+}
+
+.teal-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d9488;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #14b8a6;
+}
+
+.teal-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0d9488;
+    margin: 16px 0 10px;
+}
+
+.teal-style h4,
+.teal-style h5,
+.teal-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #475569;
+    margin: 14px 0 8px;
+}
+
+.teal-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.teal-style strong {
+    color: #14b8a6;
+    font-weight: bold;
+}
+
+.teal-style em {
+    color: #0d9488;
+    font-style: italic;
+}
+
+.teal-style a {
+    color: #14b8a6;
+    text-decoration: none;
+    border-bottom: 1px solid #14b8a6;
+}
+
+.teal-style ul,
+.teal-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.teal-style li {
+    margin: 6px 0;
+}
+
+.teal-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f0fdfa;
+    border-left: 4px solid #14b8a6;
+    color: #475569;
+    font-style: italic;
+}
+
+.teal-style code {
+    background: #ccfbf1;
+    color: #0f766e;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.teal-style pre {
+    background: #f0fdfa;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #99f6e4;
+}
+
+.teal-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.teal-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.teal-style table th {
+    background: #14b8a6;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.teal-style table td {
+    padding: 10px;
+    border: 1px solid #99f6e4;
+}
+
+.teal-style table tr:nth-child(even) {
+    background: #f0fdfa;
+}
+
+.teal-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(20, 184, 166, 0.15);
+}
+
+.teal-style hr {
+    border: none;
+    border-top: 2px solid #99f6e4;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Red Bold 主题样式（新增）
+   ======================================== */
+
+.red-style {
+    font-size: 16px;
+    color: #1f2937;
+    line-height: 1.8;
+}
+
+.red-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc2626;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #dc2626;
+}
+
+.red-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b91c1c;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #dc2626;
+}
+
+.red-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #b91c1c;
+    margin: 16px 0 10px;
+}
+
+.red-style h4,
+.red-style h5,
+.red-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4b5563;
+    margin: 14px 0 8px;
+}
+
+.red-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.red-style strong {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.red-style em {
+    color: #b91c1c;
+    font-style: italic;
+}
+
+.red-style a {
+    color: #dc2626;
+    text-decoration: none;
+    border-bottom: 1px solid #dc2626;
+}
+
+.red-style ul,
+.red-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.red-style li {
+    margin: 6px 0;
+}
+
+.red-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.red-style code {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.red-style pre {
+    background: #fef2f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #fecaca;
+}
+
+.red-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.red-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.red-style table th {
+    background: #dc2626;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.red-style table td {
+    padding: 10px;
+    border: 1px solid #fecaca;
+}
+
+.red-style table tr:nth-child(even) {
+    background: #fef8f8;
+}
+
+.red-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+}
+
+.red-style hr {
+    border: none;
+    border-top: 2px solid #fecaca;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Amber Warm 主题样式（新增）
+   ======================================== */
+
+.amber-style {
+    font-size: 16px;
+    color: #292524;
+    line-height: 1.8;
+}
+
+.amber-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f59e0b;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f59e0b;
+}
+
+.amber-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d97706;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #f59e0b;
+}
+
+.amber-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d97706;
+    margin: 16px 0 10px;
+}
+
+.amber-style h4,
+.amber-style h5,
+.amber-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #57534e;
+    margin: 14px 0 8px;
+}
+
+.amber-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.amber-style strong {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.amber-style em {
+    color: #d97706;
+    font-style: italic;
+}
+
+.amber-style a {
+    color: #f59e0b;
+    text-decoration: none;
+    border-bottom: 1px solid #f59e0b;
+}
+
+.amber-style ul,
+.amber-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.amber-style li {
+    margin: 6px 0;
+}
+
+.amber-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    color: #57534e;
+    font-style: italic;
+}
+
+.amber-style code {
+    background: #fef3c7;
+    color: #b45309;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.amber-style pre {
+    background: #fffbeb;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #fde68a;
+}
+
+.amber-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.amber-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.amber-style table th {
+    background: #f59e0b;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.amber-style table td {
+    padding: 10px;
+    border: 1px solid #fde68a;
+}
+
+.amber-style table tr:nth-child(even) {
+    background: #fefcf3;
+}
+
+.amber-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+
+.amber-style hr {
+    border: none;
+    border-top: 2px solid #fde68a;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Mint Fresh 主题样式（新增）
+   ======================================== */
+
+.mint-style {
+    font-size: 16px;
+    color: #1e293b;
+    line-height: 1.8;
+}
+
+.mint-style h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #10b981;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #10b981;
+}
+
+.mint-style h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #059669;
+    margin: 18px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #10b981;
+}
+
+.mint-style h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #059669;
+    margin: 16px 0 10px;
+}
+
+.mint-style h4,
+.mint-style h5,
+.mint-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #475569;
+    margin: 14px 0 8px;
+}
+
+.mint-style p {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.mint-style strong {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.mint-style em {
+    color: #059669;
+    font-style: italic;
+}
+
+.mint-style a {
+    color: #10b981;
+    text-decoration: none;
+    border-bottom: 1px solid #10b981;
+}
+
+.mint-style ul,
+.mint-style ol {
+    margin: 12px 0;
+    padding-left: 28px;
+}
+
+.mint-style li {
+    margin: 6px 0;
+}
+
+.mint-style blockquote {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    color: #475569;
+    font-style: italic;
+}
+
+.mint-style code {
+    background: #d1fae5;
+    color: #047857;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.mint-style pre {
+    background: #f0fdf4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #a7f3d0;
+}
+
+.mint-style pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 13px;
+}
+
+.mint-style table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.mint-style table th {
+    background: #10b981;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.mint-style table td {
+    padding: 10px;
+    border: 1px solid #a7f3d0;
+}
+
+.mint-style table tr:nth-child(even) {
+    background: #f7fef9;
+}
+
+.mint-style img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.mint-style hr {
+    border: none;
+    border-top: 2px solid #a7f3d0;
+    margin: 20px 0;
+}
+
+/* ========================================
    Footer 样式
    ======================================== */
 
