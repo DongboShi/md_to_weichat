@@ -110,17 +110,17 @@ function convertToInlineStyles(html) {
         // Helper function to check if background color is white or near-white
         // These should be excluded to avoid gray/white backgrounds in WeChat
         function isWhiteOrNearWhite(bgColor) {
-            if (!bgColor) return true;
-            // Common white values
+            if (!bgColor) return false;  // Allow checking of actual background values
+            // Common white values (pre-normalized for efficiency)
             const whiteValues = [
-                'rgb(255, 255, 255)',
-                'rgba(255, 255, 255, 1)',
+                'rgb(255,255,255)',
+                'rgba(255,255,255,1)',
                 '#ffffff',
                 '#fff',
                 'white'
             ];
             const normalized = bgColor.toLowerCase().replace(/\s/g, '');
-            return whiteValues.some(white => normalized === white.toLowerCase().replace(/\s/g, ''));
+            return whiteValues.includes(normalized);
         }
         
         // Process all elements and apply computed styles inline
