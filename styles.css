@@ -1,4 +1,245 @@
+/* ========================================
+   基础样式 (Base Styles)
+   ======================================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f5f5f5;
+    --container-bg: #ffffff;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --primary-color: #07c160;
+    --code-bg: #f6f6f6;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ========================================
+   容器布局 (Container Layout)
+   ======================================== */
+
+.container {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+}
+
+/* ========================================
+   页头样式 (Header Styles)
+   ======================================== */
+
+.header {
+    background: var(--container-bg);
+    padding: 20px 30px;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ========================================
+   按钮样式 (Button Styles)
+   ======================================== */
+
+.btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: white;
+    color: var(--text-color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn:hover {
+    background: #f9f9f9;
+    border-color: var(--primary-color);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #06ad56;
+    border-color: #06ad56;
+}
+
+.btn-secondary {
+    background: white;
+}
+
+select.btn {
+    cursor: pointer;
+}
+
+/* ========================================
+   主内容区 (Main Content)
+   ======================================== */
+
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+/* ========================================
+   编辑器面板 (Editor Panel)
+   ======================================== */
+
+.editor-panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--container-bg);
+    border-right: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 15px 20px;
+    background: var(--container-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.word-count {
+    font-size: 13px;
+    color: #999;
+}
+
+.tip {
+    font-size: 12px;
+    color: #999;
+}
+
+.editor {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    background: var(--container-bg);
+    color: var(--text-color);
+    overflow-y: auto;
+}
+
+.editor::placeholder {
+    color: #bbb;
+}
+
+/* ========================================
+   预览面板 (Preview Panel)
+   ======================================== */
+
+.preview-panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--container-bg);
+    overflow: hidden;
+}
+
+.preview {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+/* ========================================
+   页脚样式 (Footer Styles)
+   ======================================== */
+
+.footer {
+    background: var(--container-bg);
+    padding: 15px 30px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
+    color: #999;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Toast 通知 (Toast Notification)
+   ======================================== */
+
+.toast {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* ========================================
    排版样式 (Typography Styles)
