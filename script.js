@@ -17,16 +17,25 @@ const toast = document.getElementById('toast');
 // Marked.js 配置
 // ========================================
 
-marked.setOptions({
-    highlight: function(code, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-            try {
-                return hljs.highlight(code, { language: lang }).value;
-            } catch (err) {
-                console.error(err);
+marked.use({
+    renderer: {
+        code({ text, lang }) {
+            let highlightedCode;
+            const language = lang?.trim();
+            if (language && hljs.getLanguage(language)) {
+                try {
+                    highlightedCode = hljs.highlight(text, { language }).value;
+                } catch (err) {
+                    console.error(err);
+                    highlightedCode = text;
+                }
+            } else {
+                highlightedCode = hljs.highlightAuto(text).value;
             }
+            const escapedLang = language ? language.replace(/&/g, '&amp;').replace(/"/g, '&quot;') : '';
+            const langClass = escapedLang ? ' class="language-' + escapedLang + '"' : '';
+            return '<pre><code' + langClass + '>' + highlightedCode + '\n</code></pre>\n';
         }
-        return hljs.highlightAuto(code).value;
     },
     breaks: true,
     gfm: true

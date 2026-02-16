@@ -1,2 +1,5 @@
 libs/
 test-themes.html
+node_modules/
+package.json
+package-lock.json
