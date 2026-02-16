@@ -325,7 +325,7 @@ copyBtn.addEventListener('click', async () => {
             if (successful) {
                 showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
             } else {
-                throw new Error('execCommand returned false');
+                throw new Error('Copy operation failed: execCommand unsuccessful');
             }
         } finally {
             // Always remove the container
