@@ -137,8 +137,10 @@ function convertToInlineStyles(html) {
                 styles.push(`text-align: ${computed.textAlign}`);
             }
             
-            // Background
-            if (isValidValue(computed.backgroundColor)) {
+            // Background - only apply to elements that should have backgrounds
+            // Don't apply background to most elements to avoid gray background in WeChat
+            const shouldHaveBackground = ['code', 'pre', 'blockquote', 'th', 'tr', 'td'].includes(tagName);
+            if (shouldHaveBackground && isValidValue(computed.backgroundColor)) {
                 styles.push(`background-color: ${computed.backgroundColor}`);
             }
             
