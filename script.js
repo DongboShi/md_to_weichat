@@ -282,35 +282,54 @@ copyBtn.addEventListener('click', async () => {
         // Convert to inline styles for WeChat compatibility
         const styledHtml = convertToInlineStyles(preview.innerHTML);
         
-        // 创建一个临时容器
+        // Try modern Clipboard API first
+        if (navigator.clipboard && navigator.clipboard.write) {
+            try {
+                // Create clipboard item with both HTML and plain text
+                const textContent = preview.textContent || preview.innerText || '';
+                const clipboardItem = new ClipboardItem({
+                    'text/html': new Blob([styledHtml], { type: 'text/html' }),
+                    'text/plain': new Blob([textContent], { type: 'text/plain' })
+                });
+                await navigator.clipboard.write([clipboardItem]);
+                showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
+                return;
+            } catch (clipboardErr) {
+                console.warn('Clipboard API failed, trying fallback:', clipboardErr);
+                // Continue to fallback method
+            }
+        }
+        
+        // Fallback: Use selection + execCommand method
         const container = document.createElement('div');
         container.innerHTML = styledHtml;
         container.style.position = 'absolute';
         container.style.left = '-9999px';
+        container.style.top = '-9999px';
         document.body.appendChild(container);
         
-        // 选择内容
-        const range = document.createRange();
-        range.selectNodeContents(container);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        
-        // 复制
-        const successful = document.execCommand('copy');
-        
-        // 清理
-        selection.removeAllRanges();
-        document.body.removeChild(container);
-        
-        if (successful) {
-            showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
-        } else {
-            // 降级方案：使用 Clipboard API
-            const blob = new Blob([styledHtml], { type: 'text/html' });
-            const clipboardItem = new ClipboardItem({ 'text/html': blob });
-            await navigator.clipboard.write([clipboardItem]);
-            showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
+        try {
+            // Select the content
+            const range = document.createRange();
+            range.selectNodeContents(container);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            
+            // Try to copy
+            const successful = document.execCommand('copy');
+            
+            // Clean up selection
+            selection.removeAllRanges();
+            
+            if (successful) {
+                showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
+            } else {
+                throw new Error('Copy operation failed: execCommand unsuccessful');
+            }
+        } finally {
+            // Always remove the container
+            document.body.removeChild(container);
         }
     } catch (err) {
         console.error('复制失败:', err);
