@@ -83,6 +83,8 @@ function updateWordCount() {
  */
 function convertToInlineStyles(html) {
     const NORMAL_FONT_WEIGHT = '400';
+    // Elements that should preserve their background colors when copied
+    const ELEMENTS_WITH_BACKGROUND = ['code', 'pre', 'blockquote', 'th', 'tr', 'td'];
     
     // Create a temporary container with the same classes as preview
     const tempContainer = document.createElement('div');
@@ -137,8 +139,10 @@ function convertToInlineStyles(html) {
                 styles.push(`text-align: ${computed.textAlign}`);
             }
             
-            // Background
-            if (isValidValue(computed.backgroundColor)) {
+            // Background - only apply to elements that should have backgrounds
+            // Don't apply background to most elements to avoid gray background in WeChat
+            const shouldHaveBackground = ELEMENTS_WITH_BACKGROUND.includes(tagName);
+            if (shouldHaveBackground && isValidValue(computed.backgroundColor)) {
                 styles.push(`background-color: ${computed.backgroundColor}`);
             }
             
