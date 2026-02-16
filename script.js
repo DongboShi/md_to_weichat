@@ -107,6 +107,22 @@ function convertToInlineStyles(html) {
                    value !== 'transparent';
         }
         
+        // Helper function to check if background color is white or near-white
+        // These should be excluded to avoid gray/white backgrounds in WeChat
+        function isWhiteOrNearWhite(bgColor) {
+            if (!bgColor) return false;  // Allow checking of actual background values
+            // Common white values (pre-normalized for efficiency)
+            const whiteValues = [
+                'rgb(255,255,255)',
+                'rgba(255,255,255,1)',
+                '#ffffff',
+                '#fff',
+                'white'
+            ];
+            const normalized = bgColor.toLowerCase().replace(/\s/g, '');
+            return whiteValues.includes(normalized);
+        }
+        
         // Process all elements and apply computed styles inline
         const allElements = tempContainer.querySelectorAll('*');
         allElements.forEach(element => {
@@ -141,8 +157,9 @@ function convertToInlineStyles(html) {
             
             // Background - only apply to elements that should have backgrounds
             // Don't apply background to most elements to avoid gray background in WeChat
+            // Also exclude white and near-white backgrounds
             const shouldHaveBackground = ELEMENTS_WITH_BACKGROUND.includes(tagName);
-            if (shouldHaveBackground && isValidValue(computed.backgroundColor)) {
+            if (shouldHaveBackground && isValidValue(computed.backgroundColor) && !isWhiteOrNearWhite(computed.backgroundColor)) {
                 styles.push(`background-color: ${computed.backgroundColor}`);
             }
             
