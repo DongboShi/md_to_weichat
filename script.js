@@ -21,7 +21,7 @@ marked.use({
     renderer: {
         code({ text, lang }) {
             let highlightedCode;
-            const language = (lang || '').match(/\S*/)?.[0];
+            const language = lang?.trim();
             if (language && hljs.getLanguage(language)) {
                 try {
                     highlightedCode = hljs.highlight(text, { language }).value;
@@ -32,7 +32,8 @@ marked.use({
             } else {
                 highlightedCode = hljs.highlightAuto(text).value;
             }
-            const langClass = language ? ' class="language-' + language + '"' : '';
+            const escapedLang = language ? language.replace(/&/g, '&amp;').replace(/"/g, '&quot;') : '';
+            const langClass = escapedLang ? ' class="language-' + escapedLang + '"' : '';
             return '<pre><code' + langClass + '>' + highlightedCode + '\n</code></pre>\n';
         }
     },
