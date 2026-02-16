@@ -1,6 +1,5 @@
-function convertToInlineStyles(element) {
-    if (element.style.backgroundColor && !['code', 'pre', 'blockquote', 'th', 'td'].includes(element.tagName.toLowerCase())) {
-        element.style.backgroundColor = '';
-    }
-    // Rest of the function logic...
-}
+// Updated script.js file
+
+const ELEMENTS_WITH_BACKGROUND = ['code', 'pre', 'blockquote'];
+
+// ... rest of the script ...
