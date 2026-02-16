@@ -77,11 +77,176 @@ function updateWordCount() {
 // 复制富文本
 // ========================================
 
+/**
+ * Convert styled HTML to inline styles for WeChat compatibility
+ * WeChat strips CSS classes, so we need to apply all styles inline
+ */
+function convertToInlineStyles(html) {
+    const NORMAL_FONT_WEIGHT = '400';
+    
+    // Create a temporary container with the same classes as preview
+    const tempContainer = document.createElement('div');
+    tempContainer.className = preview.className;
+    tempContainer.innerHTML = html;
+    tempContainer.style.position = 'absolute';
+    tempContainer.style.left = '-9999px';
+    tempContainer.style.visibility = 'hidden';
+    document.body.appendChild(tempContainer);
+    
+    try {
+        // Helper function to check if a value is meaningful
+        function isValidValue(value) {
+            return value && 
+                   value !== 'none' && 
+                   value !== 'normal' && 
+                   value !== 'auto' && 
+                   value !== '0px' &&
+                   value !== 'rgba(0, 0, 0, 0)' &&
+                   value !== 'transparent';
+        }
+        
+        // Process all elements and apply computed styles inline
+        const allElements = tempContainer.querySelectorAll('*');
+        allElements.forEach(element => {
+            const computed = window.getComputedStyle(element);
+            const tagName = element.tagName.toLowerCase();
+            
+            // Build inline style string
+            const styles = [];
+            
+            // Font and text properties
+            if (isValidValue(computed.color)) {
+                styles.push(`color: ${computed.color}`);
+            }
+            if (isValidValue(computed.fontSize)) {
+                styles.push(`font-size: ${computed.fontSize}`);
+            }
+            if (isValidValue(computed.fontWeight) && computed.fontWeight !== NORMAL_FONT_WEIGHT) {
+                styles.push(`font-weight: ${computed.fontWeight}`);
+            }
+            if (isValidValue(computed.fontStyle) && computed.fontStyle !== 'normal') {
+                styles.push(`font-style: ${computed.fontStyle}`);
+            }
+            if (isValidValue(computed.lineHeight)) {
+                styles.push(`line-height: ${computed.lineHeight}`);
+            }
+            if (isValidValue(computed.textDecoration) && !computed.textDecoration.startsWith('none')) {
+                styles.push(`text-decoration: ${computed.textDecoration}`);
+            }
+            if (isValidValue(computed.textAlign) && computed.textAlign !== 'start') {
+                styles.push(`text-align: ${computed.textAlign}`);
+            }
+            
+            // Background
+            if (isValidValue(computed.backgroundColor)) {
+                styles.push(`background-color: ${computed.backgroundColor}`);
+            }
+            
+            // Spacing
+            if (isValidValue(computed.marginTop)) {
+                styles.push(`margin-top: ${computed.marginTop}`);
+            }
+            if (isValidValue(computed.marginBottom)) {
+                styles.push(`margin-bottom: ${computed.marginBottom}`);
+            }
+            if (isValidValue(computed.marginLeft)) {
+                styles.push(`margin-left: ${computed.marginLeft}`);
+            }
+            if (isValidValue(computed.marginRight)) {
+                styles.push(`margin-right: ${computed.marginRight}`);
+            }
+            if (isValidValue(computed.paddingTop)) {
+                styles.push(`padding-top: ${computed.paddingTop}`);
+            }
+            if (isValidValue(computed.paddingBottom)) {
+                styles.push(`padding-bottom: ${computed.paddingBottom}`);
+            }
+            if (isValidValue(computed.paddingLeft)) {
+                styles.push(`padding-left: ${computed.paddingLeft}`);
+            }
+            if (isValidValue(computed.paddingRight)) {
+                styles.push(`padding-right: ${computed.paddingRight}`);
+            }
+            
+            // Borders
+            if (isValidValue(computed.borderLeft) && !computed.borderLeft.startsWith('0px none')) {
+                styles.push(`border-left: ${computed.borderLeft}`);
+            }
+            if (isValidValue(computed.borderBottom) && !computed.borderBottom.startsWith('0px none')) {
+                styles.push(`border-bottom: ${computed.borderBottom}`);
+            }
+            if (isValidValue(computed.borderTop) && !computed.borderTop.startsWith('0px none')) {
+                styles.push(`border-top: ${computed.borderTop}`);
+            }
+            if (isValidValue(computed.borderRight) && !computed.borderRight.startsWith('0px none')) {
+                styles.push(`border-right: ${computed.borderRight}`);
+            }
+            if (isValidValue(computed.border) && !computed.border.startsWith('0px none')) {
+                styles.push(`border: ${computed.border}`);
+            }
+            
+            // Visual effects
+            if (isValidValue(computed.borderRadius)) {
+                styles.push(`border-radius: ${computed.borderRadius}`);
+            }
+            if (isValidValue(computed.boxShadow)) {
+                styles.push(`box-shadow: ${computed.boxShadow}`);
+            }
+            
+            // Display and layout (for specific elements)
+            if (tagName === 'img' || tagName === 'table') {
+                if (isValidValue(computed.display)) {
+                    styles.push(`display: ${computed.display}`);
+                }
+                if (isValidValue(computed.maxWidth)) {
+                    styles.push(`max-width: ${computed.maxWidth}`);
+                }
+                if (isValidValue(computed.width) && computed.width !== 'auto') {
+                    styles.push(`width: ${computed.width}`);
+                }
+                if (isValidValue(computed.height) && computed.height !== 'auto') {
+                    styles.push(`height: ${computed.height}`);
+                }
+            }
+            
+            // Code blocks need special handling
+            if (tagName === 'pre' || tagName === 'code') {
+                if (isValidValue(computed.fontFamily)) {
+                    styles.push(`font-family: ${computed.fontFamily}`);
+                }
+                if (isValidValue(computed.whiteSpace)) {
+                    styles.push(`white-space: ${computed.whiteSpace}`);
+                }
+            }
+            
+            // Table specific
+            if (tagName === 'table') {
+                if (isValidValue(computed.borderCollapse)) {
+                    styles.push(`border-collapse: ${computed.borderCollapse}`);
+                }
+            }
+            
+            // Apply all collected styles
+            if (styles.length > 0) {
+                element.setAttribute('style', styles.join('; '));
+            }
+        });
+        
+        return tempContainer.innerHTML;
+    } finally {
+        // Ensure cleanup even if an error occurs
+        document.body.removeChild(tempContainer);
+    }
+}
+
 copyBtn.addEventListener('click', async () => {
     try {
+        // Convert to inline styles for WeChat compatibility
+        const styledHtml = convertToInlineStyles(preview.innerHTML);
+        
         // 创建一个临时容器
         const container = document.createElement('div');
-        container.innerHTML = preview.innerHTML;
+        container.innerHTML = styledHtml;
         container.style.position = 'absolute';
         container.style.left = '-9999px';
         document.body.appendChild(container);
@@ -104,8 +269,7 @@ copyBtn.addEventListener('click', async () => {
             showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
         } else {
             // 降级方案：使用 Clipboard API
-            const html = preview.innerHTML;
-            const blob = new Blob([html], { type: 'text/html' });
+            const blob = new Blob([styledHtml], { type: 'text/html' });
             const clipboardItem = new ClipboardItem({ 'text/html': blob });
             await navigator.clipboard.write([clipboardItem]);
             showToast('✅ 复制成功！可以直接粘贴到微信公众号啦');
